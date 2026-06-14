@@ -1,0 +1,33 @@
+import SiteHeader from "../components/SiteHeader";
+import { FaqPageContent } from "../components/InfoCenterSections";
+import { faqItems } from "../components/infoCenterData";
+import { getDictionary } from "../lib/dictionaries";
+import { getRequestLocale } from "../lib/i18n-server";
+
+export const metadata = {
+  title: "FAQ | Frequently Asked Questions",
+  description:
+    "Find answers about XLIGHTING MOQ, lead time, OEM service, warranty, shipping, DMX compatibility and installation support.",
+  alternates: {
+    canonical: "/faq"
+  }
+};
+
+export default async function FaqPage() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const [heroTitle, heroSubtitle] = dictionary.infoCenter.pages.faq;
+
+  return (
+    <main className="info-page">
+      <SiteHeader />
+      <FaqPageContent
+        common={dictionary.common}
+        content={dictionary.infoCenter}
+        heroSubtitle={heroSubtitle}
+        heroTitle={heroTitle}
+        items={faqItems}
+      />
+    </main>
+  );
+}

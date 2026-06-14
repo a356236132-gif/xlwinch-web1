@@ -1,0 +1,271 @@
+{
+  "common": {
+    "viewDetails": "Ver detalhes",
+    "viewProduct": "Ver produto",
+    "viewSolution": "Ver solução",
+    "viewMore": "Ver mais",
+    "readMore": "Ler mais",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "discussSolution": "Discutir solução",
+    "getQuote": "Solicitar orçamento",
+    "contactTeam": "Falar com a equipe"
+  },
+  "header": {
+    "home": "Início",
+    "products": "Produtos",
+    "applications": "Aplicações",
+    "projects": "Projetos",
+    "about": "Empresa",
+    "info": "Info",
+    "contact": "Contato",
+    "getQuote": "Orçamento",
+    "language": "Idioma",
+    "mega": {
+      "products": {
+        "introLabel": "Produtos",
+        "introText": "Linhas de iluminação cinética, de XLWINCH a fixtures de show.",
+        "introCta": "Ver todos os produtos"
+      },
+      "applications": {
+        "introLabel": "Aplicações",
+        "introText": "Soluções para shows, locadoras, venues e instalações.",
+        "introCta": "Explorar aplicações"
+      },
+      "about": {
+        "introLabel": "Empresa",
+        "introText": "Fabricante de iluminação de palco em Guangzhou com suporte OEM/ODM.",
+        "introCta": "Conhecer a XLIGHTING"
+      },
+      "info": {
+        "introLabel": "Info Center",
+        "introText": "Recursos profissionais para compradores e equipes de projeto.",
+        "introCta": "Abrir info center"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Sistemas profissionais de iluminação cinética",
+      "subtitle": "Fabricante OEM / ODM para projetos globais",
+      "line": "Bolas LED eleváveis • Beam Rings voadores • Barras LED cinéticas • Sistemas XL Winch",
+      "primary": "Explorar produtos",
+      "secondary": "Baixar catálogo"
+    },
+    "products": {
+      "eyebrow": "Sistemas de Produto",
+      "title": "Crie efeitos cinéticos do winch ao fixture.",
+      "items": [
+        {
+          "name": "XLWINCH",
+          "text": "Sistemas de winch DMX para elevar bolas, tubos, anéis e elementos cenográficos customizados."
+        },
+        {
+          "name": "Kinetic Ball",
+          "text": "Movimento vertical suave com coreografia de luz programável para grandes arrays visuais."
+        },
+        {
+          "name": "Kinetic Tube",
+          "text": "Iluminação linear cinética para clubes, palcos, átrios e instalações imersivas."
+        },
+        {
+          "name": "Beam Ring / X-K16C Pro",
+          "text": "Beam ring voador com fachos descendentes, LEDs RGBW e impacto cênico de 360 graus."
+        },
+        {
+          "name": "SMART",
+          "text": "Produtos compactos prontos para controle e produção de eventos flexível."
+        },
+        {
+          "name": "Power Pro",
+          "text": "Iluminação de palco profissional para locação, touring e instalações permanentes."
+        }
+      ]
+    },
+    "featured": {
+      "eyebrow": "Produto em destaque",
+      "title": "X-K16C PRO transforma a altura de rigging em efeito Beam móvel.",
+      "text": "Feito para palcos de alto impacto, combina beam ring, movimento cinético e controle DMX512 / MADRIX.",
+      "link": "Solicitar parâmetros"
+    },
+    "applications": {
+      "eyebrow": "Aplicações",
+      "title": "Para compradores que precisam de efeitos confiáveis.",
+      "items": [
+        "Shows & Tours",
+        "Clubs & Bares",
+        "Casamentos & Eventos",
+        "Teatros & Igrejas",
+        "TV & Cinema",
+        "Parques temáticos"
+      ]
+    },
+    "trust": {
+      "eyebrow": "CONFIANÇA DO FABRICANTE",
+      "titleLine1": "Equipe de iluminação de palco em Guangzhou",
+      "titleLine2": "Preparada para projetos B2B globais",
+      "text": "Desde 2014, a XLIGHTING cresceu para uma equipe profissional de mais de 30 pessoas, apoiando locadoras, integradores e produtoras.",
+      "stats": [
+        ["2014", "Fundada em Guangzhou"],
+        ["30+", "Membros da equipe"],
+        ["OEM/ODM", "Fabricação personalizada"],
+        ["Global", "Suporte a projetos"]
+      ]
+    },
+    "inquiry": {
+      "eyebrow": "Consulta de projeto",
+      "title": "Conte o que você precisa mover, iluminar e controlar.",
+      "text": "Compartilhe país, tipo de local, produto e prazo. A XLIGHTING ajuda a definir o sistema certo.",
+      "form": {
+        "name": "Nome",
+        "namePlaceholder": "Seu nome",
+        "email": "E-mail",
+        "emailPlaceholder": "nome@empresa.com",
+        "country": "País",
+        "countryPlaceholder": "Brasil, México, UAE...",
+        "requirement": "Necessidade do produto",
+        "selectProduct": "Selecione um produto",
+        "message": "Mensagem",
+        "messagePlaceholder": "Local, altura, quantidade, prazo...",
+        "submit": "Enviar consulta"
+      }
+    },
+    "footer": {
+      "text": "Sistemas profissionais de iluminação cinética e soluções XLWINCH para compradores globais.",
+      "products": "Produtos",
+      "contact": "Contato",
+      "why": "Por que XLIGHTING",
+      "quality": "Controle de qualidade industrial",
+      "delivery": "Suporte de entrega global",
+      "custom": "Personalização por projeto"
+    }
+  },
+  "productsPage": {
+    "eyebrow": "Produtos",
+    "title": "Sistemas de iluminação cinética para compradores B2B profissionais.",
+    "description": "Explore as categorias XLIGHTING e solicite parâmetros, preços ou suporte OEM/ODM.",
+    "items": [
+      {
+        "title": "X-K16C PRO Beam Ring D90",
+        "text": "Sistema cinético beam ring com LEDs RGBW, altura 0-8 m e controle DMX512 / MADRIX."
+      },
+      {
+        "title": "XLWINCH",
+        "text": "Sistemas de winch cinético para bolas, tubos, anéis e fixtures cenográficos customizados."
+      },
+      {
+        "title": "Kinetic Ball",
+        "text": "Esferas cinéticas suspensas para shows, clubes, palcos, átrios e instalações imersivas."
+      },
+      {
+        "title": "Kinetic Tube",
+        "text": "Fixtures lineares cinéticos para movimento dinâmico e design espacial em grande escala."
+      },
+      {
+        "title": "SMART Series",
+        "text": "Produtos compactos de iluminação de palco prontos para locação e instalação."
+      }
+    ]
+  },
+  "applicationsPage": {
+    "hero": {
+      "titleLine1": "Soluções de iluminação cinética",
+      "titleLine2": "Para shows, eventos e venues",
+      "description": "Sistemas cinéticos profissionais para shows, tours, casamentos, clubes, igrejas e instalações comerciais.",
+      "primary": "Explorar soluções",
+      "secondary": "Ver projetos"
+    },
+    "categories": {
+      "eyebrow": "Categorias de aplicação",
+      "title": "Construído para cada palco, venue e ambiente de produção.",
+      "items": [
+        ["Shows & Tours", "Movimento cinético de alto impacto para arenas, festivais e tours."],
+        ["Clubs & Bares", "Sistemas imersivos de teto para palcos DJ e nightlife."],
+        ["Casamentos & Eventos", "Revelações cinéticas elegantes, arrays de bolas e movimento cênico."],
+        ["Igrejas", "Sistemas visuais confiáveis, silenciosos e programáveis para instalação fixa."],
+        ["TV & Broadcast", "Cues cinéticos repetíveis para estúdios, lives e produção audiovisual."],
+        ["Exposições & Espaços comerciais", "Movimento de luz customizado para showrooms, átrios e marcas."]
+      ]
+    },
+    "buyers": {
+      "eyebrow": "Tipo de comprador",
+      "title": "Encontre soluções por tipo de comprador",
+      "typical": "Tamanho típico do projeto",
+      "recommended": "Produtos recomendados",
+      "items": [
+        ["Locadoras", "50-500 fixtures", "K66 XL Winch, Kinetic Ball, Beam Ring"],
+        ["Integradores", "Venues permanentes", "XL Winch Systems, Pixel Controller"],
+        ["Distribuidores", "Programas de estoque regional", "Kinetic Ball, LED Bar, Beam Ring"],
+        ["Parceiros OEM", "Linhas de produto customizadas", "Winch OEM, fixtures private-label"],
+        ["Produtoras de eventos", "Tours e projetos sazonais", "Kinetic LED Bar, K01 Lifting Ball"],
+        ["Donos de venues", "Clubs, igrejas, teatros", "K66 Winch, Pixel Controller, Beam Ring"]
+      ]
+    },
+    "projects": {
+      "eyebrow": "Projetos",
+      "title": "Instalações cinéticas em destaque"
+    },
+    "recommended": {
+      "eyebrow": "Produtos",
+      "title": "Produtos recomendados"
+    },
+    "trust": {
+      "eyebrow": "Força do fabricante",
+      "title": "Confiado por profissionais no mundo todo",
+      "stats": [
+        ["20+", "Anos de experiência no setor"],
+        ["100+", "Países atendidos"],
+        ["5000+", "Projetos entregues"],
+        ["24 horas", "Suporte técnico"]
+      ]
+    },
+    "cta": {
+      "title": "Pronto para criar seu próximo projeto cinético?"
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "About XLIGHTING",
+    "title": "Equipe de iluminação de palco em Guangzhou para projetos B2B globais.",
+    "description": "Fundada em 2014, a XLIGHTING apoia locadoras, integradores e equipes de produção com produtos cinéticos e suporte de projeto.",
+    "stats": [
+      ["2014", "Fundada em Guangzhou"],
+      ["30+", "Equipe profissional"],
+      ["OEM/ODM", "Sistemas personalizados"],
+      ["Global", "Entrega e suporte"]
+    ]
+  },
+  "infoCenter": {
+    "hero": {
+      "title": "Info Center",
+      "subtitle": "Recursos profissionais de iluminação de palco",
+      "description": "Explore conhecimento de produto, ideias de projeto, notícias, feiras e guias técnicos da X Lighting."
+    },
+    "categoriesTitle": "Navegar por categoria",
+    "categoriesDescription": "Escolha uma categoria e acesse sua página dedicada.",
+    "latestTitle": "Artigos recentes",
+    "latestDescription": "Recursos recentes para compradores e equipes de projeto.",
+    "pages": {
+      "blog": ["Blog", "Insights do setor & inspiração"],
+      "news": ["News", "Atualizações da empresa & produtos"],
+      "exhibitions": ["Exhibitions", "Feiras & eventos globais"],
+      "faq": ["FAQ", "Perguntas frequentes"],
+      "knowledge": ["Knowledge Center", "Guias técnicos & recursos"]
+    }
+  },
+  "contactPage": {
+    "eyebrow": "Contato",
+    "title": "Conte os requisitos do seu projeto de iluminação cinética.",
+    "description": "Compartilhe país, local, produto, quantidade e prazo. A XLIGHTING ajuda a montar a configuração correta.",
+    "sales": "Contato comercial",
+    "location": {
+      "eyebrow": "Localização da fábrica",
+      "title": "Visite nossa fábrica",
+      "manufacturer": "Fabricante profissional de iluminação de palco",
+      "visit1": "Visitas com agendamento",
+      "visit2": "Envie sua agenda antes da chegada",
+      "visit3": "Abra o mapa para planejar a rota",
+      "email": "E-mail",
+      "openMap": "Abrir no OpenStreetMap"
+    }
+  }
+}
