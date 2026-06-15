@@ -4,14 +4,19 @@ import { resourceArticles } from "../components/infoCenterData";
 import { getDictionary } from "../lib/dictionaries";
 import { getRequestLocale } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "Knowledge Center | Technical Guides & Learning Resources",
-  description:
-    "Learn DMX512, Art-Net, MADRIX, kinetic lighting systems, stage lighting basics and product installation planning with XLIGHTING.",
-  alternates: {
-    canonical: "/knowledge"
-  }
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const [heroTitle, heroSubtitle] = dictionary.infoCenter.pages.knowledge;
+
+  return {
+    title: `${heroTitle} | ${heroSubtitle}`,
+    description: dictionary.infoCenter.resourceDescription,
+    alternates: {
+      canonical: "/knowledge"
+    }
+  };
+}
 
 export default async function KnowledgePage() {
   const locale = await getRequestLocale();

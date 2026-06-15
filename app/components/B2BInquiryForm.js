@@ -3,16 +3,18 @@
 import { useState } from "react";
 import { AlertCircle, CheckCircle2, LoaderCircle, Send, ShieldCheck } from "lucide-react";
 
-const initialValues = {
+function createInitialValues(defaultProductRequirement = "") {
+  return {
   name: "",
   email: "",
   phone: "",
   company: "",
   country: "",
-  productRequirement: "",
+  productRequirement: defaultProductRequirement,
   message: "",
   website: ""
 };
+}
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^\+?[0-9][0-9\s().-]{5,24}$/;
@@ -39,8 +41,8 @@ function validate(values) {
   return nextErrors;
 }
 
-export default function B2BInquiryForm() {
-  const [values, setValues] = useState(initialValues);
+export default function B2BInquiryForm({ defaultProductRequirement = "" }) {
+  const [values, setValues] = useState(() => createInitialValues(defaultProductRequirement));
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ type: "idle", message: "" });
 
@@ -87,7 +89,7 @@ export default function B2BInquiryForm() {
         throw new Error(result.message || "Submission failed. Please try again.");
       }
 
-      setValues(initialValues);
+      setValues(createInitialValues(defaultProductRequirement));
       setErrors({});
       setStatus({
         type: "success",

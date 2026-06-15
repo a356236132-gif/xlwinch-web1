@@ -15,6 +15,8 @@ import {
   Zap
 } from "lucide-react";
 import SiteHeader from "../../components/SiteHeader";
+import B2BInquiryForm from "../../components/B2BInquiryForm";
+import { absoluteUrl } from "../../lib/site-config";
 
 export const metadata = {
   title: "X-K16C PRO Beam Ring D90 Kinetic Lighting System",
@@ -92,7 +94,7 @@ const jsonLd = {
     name: "XLIGHTING"
   },
   category: "Kinetic Stage Lighting",
-  image: "https://www.xlighting.com/assets/xk16c-product.jpg",
+  image: absoluteUrl("/assets/xk16c-product.jpg"),
   description:
     "A flying beam ring kinetic lighting system with RGBW LEDs, 0-8m lifting height, 900mm diameter and DMX512 / MADRIX control.",
   manufacturer: {
@@ -270,32 +272,7 @@ export default function Xk16cProductPage() {
             will help you match the right kinetic lighting setup.
           </p>
         </div>
-        <form className="quote-form">
-          <label>
-            Name
-            <input name="name" type="text" placeholder="Your name" />
-          </label>
-          <label>
-            Email
-            <input name="email" type="email" placeholder="name@company.com" />
-          </label>
-          <label>
-            Country
-            <input name="country" type="text" placeholder="Your country" />
-          </label>
-          <label>
-            Requirement
-            <input name="requirement" type="text" placeholder="Quantity, venue, control mode..." />
-          </label>
-          <label className="full">
-            Message
-            <textarea name="message" placeholder="Share your project details..." />
-          </label>
-          <button className="button button-primary full" type="submit">
-            Submit Inquiry
-            <ArrowRight size={18} aria-hidden="true" />
-          </button>
-        </form>
+        <B2BInquiryForm defaultProductRequirement="X-K16C PRO Beam Ring" />
       </section>
     </main>
   );

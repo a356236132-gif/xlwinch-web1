@@ -4,14 +4,19 @@ import { resourceArticles } from "../components/infoCenterData";
 import { getDictionary } from "../lib/dictionaries";
 import { getRequestLocale } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "News | Company Updates & Product Announcements",
-  description:
-    "Follow XLIGHTING company updates, product announcements, factory news and project delivery updates for global B2B lighting buyers.",
-  alternates: {
-    canonical: "/news"
-  }
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const [heroTitle, heroSubtitle] = dictionary.infoCenter.pages.news;
+
+  return {
+    title: `${heroTitle} | ${heroSubtitle}`,
+    description: dictionary.infoCenter.resourceDescription,
+    alternates: {
+      canonical: "/news"
+    }
+  };
+}
 
 export default async function NewsPage() {
   const locale = await getRequestLocale();

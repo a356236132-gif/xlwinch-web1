@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
 
 export const metadata = {
-  title: "Factory Strength | XLIGHTING Stage Lighting Manufacturing",
+  title: "Factory Strength | Stage Lighting Manufacturing",
   description:
     "XLIGHTING factory strength page for manufacturing, product testing, quality control, packaging and global project delivery support."
 };

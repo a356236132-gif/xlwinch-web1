@@ -4,14 +4,19 @@ import { resourceArticles } from "../components/infoCenterData";
 import { getDictionary } from "../lib/dictionaries";
 import { getRequestLocale } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "Blog | Industry Insights & Project Inspiration",
-  description:
-    "Read XLIGHTING blog articles about kinetic lighting, moving head lights, stage lighting trends, wedding lighting and rental business growth.",
-  alternates: {
-    canonical: "/blog"
-  }
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const [heroTitle, heroSubtitle] = dictionary.infoCenter.pages.blog;
+
+  return {
+    title: `${heroTitle} | ${heroSubtitle}`,
+    description: dictionary.infoCenter.resourceDescription,
+    alternates: {
+      canonical: "/blog"
+    }
+  };
+}
 
 export default async function BlogPage() {
   const locale = await getRequestLocale();

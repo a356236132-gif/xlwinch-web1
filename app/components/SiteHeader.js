@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "./LanguageProvider";
@@ -81,6 +81,7 @@ export default function SiteHeader() {
   const { dictionary, href } = useLanguage();
   const [activeMenu, setActiveMenu] = useState(null);
   const [pinnedMenu, setPinnedMenu] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const closeTimerRef = useRef(null);
   const headerRef = useRef(null);
   const header = dictionary.header;
@@ -164,6 +165,7 @@ export default function SiteHeader() {
     cancelClose();
     setPinnedMenu(null);
     setActiveMenu(null);
+    setMobileMenuOpen(false);
   }
 
   const activeMegaMenu = megaItems.find((item) => item.id === activeMenu);
@@ -177,6 +179,7 @@ export default function SiteHeader() {
       cancelClose();
       setPinnedMenu(null);
       setActiveMenu(null);
+      setMobileMenuOpen(false);
     }
 
     function handleKeyDown(event) {
@@ -184,6 +187,7 @@ export default function SiteHeader() {
         cancelClose();
         setPinnedMenu(null);
         setActiveMenu(null);
+        setMobileMenuOpen(false);
       }
     }
 
@@ -241,6 +245,16 @@ export default function SiteHeader() {
         <a href={href("/contact")}>{header.contact}</a>
       </nav>
 
+      <button
+        aria-expanded={mobileMenuOpen}
+        className="mobile-menu-toggle"
+        onClick={() => setMobileMenuOpen((isOpen) => !isOpen)}
+        type="button"
+      >
+        {mobileMenuOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
+        <span>Menu</span>
+      </button>
+
       <div className="header-actions-group">
         <LanguageSwitcher />
         <a className="header-cta" href={href("/inquiry")}>
@@ -256,6 +270,24 @@ export default function SiteHeader() {
         onLinkClick={closeMenu}
         onScheduleClose={scheduleClose}
       />
+
+      <div className={`mobile-nav-panel${mobileMenuOpen ? " is-open" : ""}`}>
+        <a href={href("/")} onClick={closeMenu}>{header.home}</a>
+        {megaItems.map((item) => (
+          <div className="mobile-nav-group" key={item.id}>
+            <a href={href(item.introHref)} onClick={closeMenu}>{item.label}</a>
+            <div>
+              {item.links.slice(0, 5).map(([name, , link]) => (
+                <a href={href(link)} key={`${item.id}-${name}`} onClick={closeMenu}>
+                  {name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+        <a href={href("/projects")} onClick={closeMenu}>{header.projects}</a>
+        <a href={href("/contact")} onClick={closeMenu}>{header.contact}</a>
+      </div>
     </header>
   );
 }

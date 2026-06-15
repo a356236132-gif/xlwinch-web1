@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
 
 export const metadata = {
-  title: "Download Center | XLIGHTING Catalog and Product Files",
+  title: "Download Center | Catalog and Product Files",
   description:
     "Download XLIGHTING catalog and request product parameter sheets, manuals, DMX channel tables and project documents."
 };

@@ -26,7 +26,7 @@ export const infoCategories = [
   }
 ];
 
-export const resourceArticles = {
+const rawResourceArticles = {
   blog: [
     {
       category: "Blog",
@@ -34,8 +34,7 @@ export const resourceArticles = {
       date: "2026-06-02",
       excerpt:
         "A practical look at how moving light objects create stronger visual storytelling for concerts, weddings and venue installations.",
-      image: "/assets/hero-concert-banner.jpg",
-      href: "/blog"
+      image: "/assets/hero-concert-banner.jpg"
     },
     {
       category: "Blog",
@@ -43,8 +42,7 @@ export const resourceArticles = {
       date: "2026-05-25",
       excerpt:
         "Compare beam, spot, wash and hybrid fixtures before planning your next rental inventory or fixed installation.",
-      image: "/assets/product-led-bsw-front.jpg",
-      href: "/blog"
+      image: "/assets/product-led-bsw-front.jpg"
     },
     {
       category: "Blog",
@@ -52,8 +50,7 @@ export const resourceArticles = {
       date: "2026-05-18",
       excerpt:
         "Explore the design trends shaping touring shows, clubs, theaters and commercial spaces in 2026.",
-      image: "/assets/hero-xk16c.jpg",
-      href: "/blog"
+      image: "/assets/hero-xk16c.jpg"
     },
     {
       category: "Blog",
@@ -61,8 +58,7 @@ export const resourceArticles = {
       date: "2026-05-08",
       excerpt:
         "Use kinetic movement, beam effects and warm scene transitions to create memorable wedding productions.",
-      image: "/assets/exhibition.jpg",
-      href: "/blog"
+      image: "/assets/exhibition.jpg"
     },
     {
       category: "Blog",
@@ -70,8 +66,7 @@ export const resourceArticles = {
       date: "2026-04-29",
       excerpt:
         "How rental companies can build differentiated lighting packages for premium events and production buyers.",
-      image: "/assets/xk16c-product.jpg",
-      href: "/blog"
+      image: "/assets/xk16c-product.jpg"
     }
   ],
   news: [
@@ -81,8 +76,7 @@ export const resourceArticles = {
       date: "2026-06-06",
       excerpt:
         "XLIGHTING continues product planning around kinetic systems for rental, integration and installation buyers.",
-      image: "/assets/xk16c-product.jpg",
-      href: "/news"
+      image: "/assets/xk16c-product.jpg"
     },
     {
       category: "News",
@@ -90,8 +84,7 @@ export const resourceArticles = {
       date: "2026-05-28",
       excerpt:
         "A closer look at how product testing, packaging and documentation support export project delivery.",
-      image: "/assets/about-team-wide.jpg",
-      href: "/news"
+      image: "/assets/about-team-wide.jpg"
     },
     {
       category: "News",
@@ -99,8 +92,7 @@ export const resourceArticles = {
       date: "2026-05-16",
       excerpt:
         "Updates on production coordination, shipment planning and technical communication for international clients.",
-      image: "/assets/hero-concert-banner.jpg",
-      href: "/news"
+      image: "/assets/hero-concert-banner.jpg"
     }
   ],
   exhibitions: [
@@ -110,8 +102,7 @@ export const resourceArticles = {
       date: "2026-06-01",
       excerpt:
         "What rental companies and distributors can prepare before visiting a professional lighting exhibition booth.",
-      image: "/assets/exhibition.jpg",
-      href: "/exhibitions"
+      image: "/assets/exhibition.jpg"
     },
     {
       category: "Exhibitions",
@@ -119,8 +110,7 @@ export const resourceArticles = {
       date: "2026-05-20",
       excerpt:
         "How beam rings, lifting balls and winch systems can be presented clearly in exhibition environments.",
-      image: "/assets/hero-xk16c.jpg",
-      href: "/exhibitions"
+      image: "/assets/hero-xk16c.jpg"
     },
     {
       category: "Exhibitions",
@@ -128,8 +118,7 @@ export const resourceArticles = {
       date: "2026-05-05",
       excerpt:
         "A structured checklist for turning exhibition conversations into product quotes and technical proposals.",
-      image: "/assets/hero-concert-banner.jpg",
-      href: "/exhibitions"
+      image: "/assets/hero-concert-banner.jpg"
     }
   ],
   knowledge: [
@@ -139,8 +128,7 @@ export const resourceArticles = {
       date: "2026-06-04",
       excerpt:
         "Understand channels, addressing and scene control before planning kinetic lighting movement and effects.",
-      image: "/assets/hero-xk16c.jpg",
-      href: "/knowledge"
+      image: "/assets/hero-xk16c.jpg"
     },
     {
       category: "Knowledge",
@@ -148,8 +136,7 @@ export const resourceArticles = {
       date: "2026-05-27",
       excerpt:
         "Learn how network control can support large fixture counts and more flexible stage lighting programming.",
-      image: "/assets/hero-concert-banner.jpg",
-      href: "/knowledge"
+      image: "/assets/hero-concert-banner.jpg"
     },
     {
       category: "Knowledge",
@@ -157,8 +144,7 @@ export const resourceArticles = {
       date: "2026-05-22",
       excerpt:
         "A starter guide to pixel mapping, cue planning and dynamic effects for professional lighting installations.",
-      image: "/assets/xk16c-product.jpg",
-      href: "/knowledge"
+      image: "/assets/xk16c-product.jpg"
     },
     {
       category: "Knowledge",
@@ -166,8 +152,7 @@ export const resourceArticles = {
       date: "2026-05-12",
       excerpt:
         "Key product, control, safety and installation factors to confirm before starting a kinetic lighting project.",
-      image: "/assets/product-led-bsw-back.jpg",
-      href: "/knowledge"
+      image: "/assets/product-led-bsw-back.jpg"
     },
     {
       category: "Knowledge",
@@ -175,8 +160,7 @@ export const resourceArticles = {
       date: "2026-04-30",
       excerpt:
         "A practical introduction to fixture types, beam effects, control systems and application planning.",
-      image: "/assets/product-led-bsw-front.jpg",
-      href: "/knowledge"
+      image: "/assets/product-led-bsw-front.jpg"
     },
     {
       category: "Knowledge",
@@ -184,11 +168,61 @@ export const resourceArticles = {
       date: "2026-04-20",
       excerpt:
         "What information to prepare for safer installation, cleaner commissioning and faster technical support.",
-      image: "/assets/about-team-wide.jpg",
-      href: "/knowledge"
+      image: "/assets/about-team-wide.jpg"
     }
   ]
 };
+
+const sectionPaths = {
+  blog: "/blog",
+  news: "/news",
+  exhibitions: "/exhibitions",
+  knowledge: "/knowledge"
+};
+
+export function slugifyArticleTitle(value) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function buildArticleBody(article) {
+  return [
+    article.excerpt,
+    "For global B2B buyers, the key is not only the visual effect. A successful lighting project also depends on fixture selection, control compatibility, delivery planning, safety communication and after-sales support.",
+    "Before requesting a quotation, prepare the venue type, ceiling or truss height, expected quantity, control system, installation timeline and destination country. These details help the manufacturer recommend a practical product configuration.",
+    "For kinetic lighting projects, buyers should confirm lifting height, load requirements, DMX or network control workflow, installation environment and maintenance access. Clear early communication reduces project risk and speeds up technical confirmation.",
+    "XLIGHTING supports rental companies, system integrators, event production teams and venue owners with stage lighting products, OEM/ODM communication and project-based quotation support from Guangzhou, China."
+  ];
+}
+
+export const resourceArticles = Object.fromEntries(
+  Object.entries(rawResourceArticles).map(([section, articles]) => [
+    section,
+    articles.map((article) => {
+      const slug = slugifyArticleTitle(article.title);
+
+      return {
+        ...article,
+        slug,
+        href: `${sectionPaths[section]}/${slug}`,
+        body: buildArticleBody(article)
+      };
+    })
+  ])
+);
+
+export function getArticle(section, slug) {
+  return resourceArticles[section]?.find((article) => article.slug === slug);
+}
+
+export function getAllArticles() {
+  return Object.entries(resourceArticles).flatMap(([section, articles]) =>
+    articles.map((article) => ({ ...article, section }))
+  );
+}
 
 export const faqItems = [
   {

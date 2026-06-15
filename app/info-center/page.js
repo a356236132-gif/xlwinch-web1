@@ -4,14 +4,19 @@ import { latestArticles } from "../components/infoCenterData";
 import { getDictionary } from "../lib/dictionaries";
 import { getRequestLocale } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "Info Center | Professional Stage Lighting Resources",
-  description:
-    "Explore product knowledge, project ideas, company updates, exhibition information and technical guides from X Lighting.",
-  alternates: {
-    canonical: "/info-center"
-  }
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const info = dictionary.infoCenter;
+
+  return {
+    title: `${info.hero.title} | ${info.hero.subtitle}`,
+    description: info.hero.description,
+    alternates: {
+      canonical: "/info-center"
+    }
+  };
+}
 
 export default async function InfoCenterPage() {
   const locale = await getRequestLocale();

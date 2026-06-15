@@ -9,9 +9,10 @@ import {
   localizedPath,
   stripLocaleFromPathname
 } from "./lib/i18n-config";
+import { SITE_URL } from "./lib/site-config";
 
 const baseMetadata = {
-  metadataBase: new URL("https://www.xlighting.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "XLIGHTING | Kinetic Lighting Systems & XLWINCH Manufacturer",
     template: "%s | XLIGHTING"
@@ -30,7 +31,7 @@ const baseMetadata = {
     title: "XLIGHTING Kinetic Lighting Systems",
     description:
       "OEM/ODM kinetic lighting and XLWINCH systems for global B2B stage, event and installation buyers.",
-    url: "https://www.xlighting.com",
+    url: SITE_URL,
     siteName: "XLIGHTING",
     images: [
       {
@@ -51,13 +52,15 @@ const baseMetadata = {
 
 export async function generateMetadata() {
   const headerStore = await headers();
-  const pathname = headerStore.get("x-pathname") || "/";
+  const pathname = headerStore.get("x-xl-pathname") || headerStore.get("x-pathname") || "/";
+  const headerLocale = headerStore.get("x-xl-locale") || headerStore.get("x-locale") || DEFAULT_LOCALE;
+  const locale = isSupportedLocale(headerLocale) ? headerLocale : DEFAULT_LOCALE;
   const cleanPath = stripLocaleFromPathname(pathname);
 
   return {
     ...baseMetadata,
     alternates: {
-      canonical: localizedPath(DEFAULT_LOCALE, cleanPath),
+      canonical: localizedPath(locale, cleanPath),
       languages: buildLanguageAlternates(pathname)
     }
   };
@@ -65,7 +68,7 @@ export async function generateMetadata() {
 
 export default async function RootLayout({ children }) {
   const headerStore = await headers();
-  const headerLocale = headerStore.get("x-locale") || DEFAULT_LOCALE;
+  const headerLocale = headerStore.get("x-xl-locale") || headerStore.get("x-locale") || DEFAULT_LOCALE;
   const locale = isSupportedLocale(headerLocale) ? headerLocale : DEFAULT_LOCALE;
 
   return (

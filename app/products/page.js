@@ -1,44 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Cable, Lightbulb, Sparkles, Wand2, Zap } from "lucide-react";
+import { ArrowRight, Cable, CircleDot, Lightbulb, Sparkles, Wand2, Zap } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
 import { getDictionary } from "../lib/dictionaries";
 import { localizedPath } from "../lib/i18n-config";
 import { getRequestLocale } from "../lib/i18n-server";
+import { productList } from "../lib/product-data";
 
-export const metadata = {
-  title: "Products | Kinetic Lighting Systems, XLWINCH, Beam Ring",
-  description:
-    "Explore XLIGHTING kinetic lighting products including XLWINCH, X-K16C PRO Beam Ring, kinetic balls, kinetic tubes, SMART and Power Pro stage lighting systems."
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const page = dictionary.productsPage;
 
-const products = [
-  {
-    href: "/products/x-k16c-pro",
-    image: "/assets/xk16c-product.jpg",
-    icon: Lightbulb
-  },
-  {
-    href: "/contact",
-    image: "/assets/xk16c-product.jpg",
-    icon: Cable
-  },
-  {
-    href: "/contact",
-    image: "/assets/hero-xk16c.jpg",
-    icon: Sparkles
-  },
-  {
-    href: "/contact",
-    image: "/assets/hero-xk16c.jpg",
-    icon: Zap
-  },
-  {
-    href: "/contact",
-    image: "/assets/product-led-bsw-front.jpg",
-    icon: Wand2
-  }
-];
+  return {
+    title: `${page.eyebrow} | Kinetic Lighting Systems`,
+    description: page.description
+  };
+}
+
+const productIcons = [Lightbulb, Cable, Sparkles, Zap, Wand2, CircleDot];
 
 export default async function ProductsPage() {
   const locale = await getRequestLocale();
@@ -57,9 +37,12 @@ export default async function ProductsPage() {
       </section>
 
       <section className="listing-grid">
-        {products.map((product, index) => {
-          const content = page.items[index];
-          const Icon = product.icon;
+        {productList.map((product, index) => {
+          const content = page.items[index] || {
+            title: product.title,
+            text: product.summary
+          };
+          const Icon = productIcons[index] || Lightbulb;
           return (
             <article className="listing-card" key={content.title}>
               <Image src={product.image} alt={content.title} width={900} height={650} />

@@ -22,11 +22,16 @@ import { getDictionary } from "../lib/dictionaries";
 import { localizedPath } from "../lib/i18n-config";
 import { getRequestLocale } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "Kinetic Lighting Solutions for Concerts, Events & Venues",
-  description:
-    "Explore XLIGHTING kinetic lighting solutions for concerts, touring productions, weddings, nightclubs, churches, broadcast studios and commercial installations."
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const hero = dictionary.applicationsPage.hero;
+
+  return {
+    title: `${hero.titleLine1} ${hero.titleLine2}`,
+    description: hero.description
+  };
+}
 
 const applicationCards = [
   {

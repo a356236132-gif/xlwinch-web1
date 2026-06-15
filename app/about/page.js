@@ -3,11 +3,16 @@ import SiteHeader from "../components/SiteHeader";
 import { getDictionary } from "../lib/dictionaries";
 import { getRequestLocale } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "About XLIGHTING | 30+ Stage Lighting Team in Guangzhou",
-  description:
-    "Learn about XLIGHTING, a Guangzhou-based stage lighting manufacturer founded in 2014 with a 30+ person team and OEM/ODM project support."
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const page = dictionary.aboutPage;
+
+  return {
+    title: `${page.eyebrow} | Stage Lighting Manufacturer`,
+    description: page.description
+  };
+}
 
 export default async function AboutPage() {
   const locale = await getRequestLocale();

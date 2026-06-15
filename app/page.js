@@ -18,11 +18,21 @@ import {
   Zap
 } from "lucide-react";
 import SiteHeader from "./components/SiteHeader";
+import B2BInquiryForm from "./components/B2BInquiryForm";
 import { getDictionary } from "./lib/dictionaries";
 import { localizedPath } from "./lib/i18n-config";
 import { getRequestLocale } from "./lib/i18n-server";
+import { CONTACT_EMAIL, SITE_URL, absoluteUrl } from "./lib/site-config";
 
 const productIcons = [Cable, Sparkles, Zap, Lightbulb, Wand2, Boxes];
+const homeProductHrefs = [
+  "/products/xlwinch",
+  "/products/kinetic-ball",
+  "/products/kinetic-tube",
+  "/products/x-k16c-pro",
+  "/products/smart-series",
+  "/products/power-pro"
+];
 
 function buildJsonLd(faqs) {
   return {
@@ -30,12 +40,12 @@ function buildJsonLd(faqs) {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.xlighting.com/#organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "XLIGHTING",
       legalName: "X Lighting Co., Ltd.",
       alternateName: "Guangzhou Xingbolun Optoelectronic Technology Co., Ltd.",
-      url: "https://www.xlighting.com",
-      logo: "https://www.xlighting.com/assets/logo.png",
+      url: SITE_URL,
+      logo: absoluteUrl("/assets/logo.png"),
       foundingDate: "2014",
       address: {
         "@type": "PostalAddress",
@@ -45,7 +55,7 @@ function buildJsonLd(faqs) {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        email: "info@xlwinch.com",
+        email: CONTACT_EMAIL,
         telephone: "+86-020-32789826",
         contactType: "sales"
       },
@@ -57,15 +67,15 @@ function buildJsonLd(faqs) {
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.xlighting.com/#website",
-      url: "https://www.xlighting.com",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
       name: "XLIGHTING",
-      publisher: { "@id": "https://www.xlighting.com/#organization" }
+      publisher: { "@id": `${SITE_URL}/#organization` }
     },
     {
       "@type": "Product",
       name: "X-K16C PRO Beam Ring D90",
-      brand: { "@id": "https://www.xlighting.com/#organization" },
+      brand: { "@id": `${SITE_URL}/#organization` },
       category: "Kinetic Stage Lighting",
       description:
         "A flying beam ring kinetic lighting product with RGBW LEDs, 0-8m lifting height, 900mm diameter and DMX512 / MADRIX control."
@@ -85,6 +95,17 @@ function buildJsonLd(faqs) {
 };
 }
 
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const home = dictionary.home;
+
+  return {
+    title: home.hero.title,
+    description: `${home.hero.subtitle}. ${home.hero.line}.`
+  };
+}
+
 export default async function Home() {
   const locale = await getRequestLocale();
   const dictionary = getDictionary(locale);
@@ -93,6 +114,7 @@ export default async function Home() {
   const pageHref = (href) => localizedPath(locale, href);
   const products = home.products.items.map((product, index) => ({
     ...product,
+    href: homeProductHrefs[index] || "/products",
     icon: productIcons[index] || Cable
   }));
   const applications = home.applications.items;
@@ -140,11 +162,15 @@ export default async function Home() {
           {products.map((product) => {
             const Icon = product.icon;
             return (
-              <article className="product-card" key={product.name}>
+              <a className="product-card" href={pageHref(product.href)} key={product.name}>
                 <Icon size={24} aria-hidden="true" />
                 <h3>{product.name}</h3>
                 <p>{product.text}</p>
-              </article>
+                <span>
+                  {common.viewProduct}
+                  <ArrowRight size={15} aria-hidden="true" />
+                </span>
+              </a>
             );
           })}
         </div>
@@ -244,7 +270,7 @@ export default async function Home() {
           <div className="contact-strip">
             <span>
               <Mail size={16} aria-hidden="true" />
-              info@xlwinch.com
+              {CONTACT_EMAIL}
             </span>
             <span>
               <MessageCircle size={16} aria-hidden="true" />
@@ -256,41 +282,7 @@ export default async function Home() {
             </span>
           </div>
         </div>
-        <form className="quote-form">
-          <label>
-            {home.inquiry.form.name}
-            <input name="name" type="text" placeholder={home.inquiry.form.namePlaceholder} />
-          </label>
-          <label>
-            {home.inquiry.form.email}
-            <input name="email" type="email" placeholder={home.inquiry.form.emailPlaceholder} />
-          </label>
-          <label>
-            {home.inquiry.form.country}
-            <input name="country" type="text" placeholder={home.inquiry.form.countryPlaceholder} />
-          </label>
-          <label>
-            {home.inquiry.form.requirement}
-            <select name="requirement" defaultValue="">
-              <option value="" disabled>
-                {home.inquiry.form.selectProduct}
-              </option>
-              <option>XLWINCH</option>
-              <option>Kinetic Ball</option>
-              <option>Kinetic Tube</option>
-              <option>X-K16C PRO Beam Ring</option>
-              <option>Custom kinetic lighting system</option>
-            </select>
-          </label>
-          <label className="full">
-            {home.inquiry.form.message}
-            <textarea name="message" placeholder={home.inquiry.form.messagePlaceholder} />
-          </label>
-          <button className="button button-primary full" type="submit">
-            {home.inquiry.form.submit}
-            <ArrowRight size={18} aria-hidden="true" />
-          </button>
-        </form>
+        <B2BInquiryForm />
       </section>
 
       <footer className="site-footer" id="contact">
@@ -313,7 +305,7 @@ export default async function Home() {
         </div>
         <div>
           <h2>{home.footer.contact}</h2>
-          <a href="mailto:info@xlwinch.com">info@xlwinch.com</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           <a href="https://www.linkedin.com/company/xstagelight/">LinkedIn</a>
           <a href="https://youtube.com/@cherryjiang-do5pi">YouTube</a>
           <a href="https://www.tiktok.com/@cherry.xlight">TikTok</a>

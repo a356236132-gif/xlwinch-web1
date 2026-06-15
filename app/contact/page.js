@@ -1,19 +1,24 @@
 import { ArrowRight, Building2, Clock3, Mail, MapPin, MessageCircle, Navigation } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
+import B2BInquiryForm from "../components/B2BInquiryForm";
 import { getDictionary } from "../lib/dictionaries";
 import { getRequestLocale } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "Contact XLIGHTING | Get a Quote for Kinetic Lighting",
-  description:
-    "Contact XLIGHTING for kinetic lighting systems, XLWINCH, X-K16C PRO Beam Ring and custom OEM/ODM stage lighting projects."
-};
+export async function generateMetadata() {
+  const locale = await getRequestLocale();
+  const dictionary = getDictionary(locale);
+  const page = dictionary.contactPage;
+
+  return {
+    title: `${page.eyebrow} XLIGHTING | Get a Quote`,
+    description: page.description
+  };
+}
 
 export default async function ContactPage() {
   const locale = await getRequestLocale();
   const dictionary = getDictionary(locale);
   const page = dictionary.contactPage;
-  const form = dictionary.home.inquiry.form;
 
   return (
     <main>
@@ -33,14 +38,7 @@ export default async function ContactPage() {
             <span><MapPin size={16} />Guangzhou, China</span>
           </div>
         </div>
-        <form className="quote-form">
-          <label>{form.name}<input name="name" type="text" placeholder={form.namePlaceholder} /></label>
-          <label>{form.email}<input name="email" type="email" placeholder={form.emailPlaceholder} /></label>
-          <label>{form.country}<input name="country" type="text" placeholder={form.countryPlaceholder} /></label>
-          <label>{form.requirement}<input name="requirement" type="text" placeholder="X-K16C PRO, XLWINCH, kinetic ball..." /></label>
-          <label className="full">{form.message}<textarea name="message" placeholder={form.messagePlaceholder} /></label>
-          <button className="button button-primary full" type="submit">{form.submit} <ArrowRight size={18} /></button>
-        </form>
+        <B2BInquiryForm />
       </section>
       <section className="contact-location" id="location" aria-labelledby="location-title">
         <div className="location-map-card">
