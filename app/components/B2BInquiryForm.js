@@ -2,18 +2,19 @@
 
 import { useState } from "react";
 import { AlertCircle, CheckCircle2, LoaderCircle, Send, ShieldCheck } from "lucide-react";
+import { DEFAULT_LOCALE, getLocaleFromPathname, localizedPath } from "../lib/i18n-config";
 
 function createInitialValues(defaultProductRequirement = "") {
   return {
-  name: "",
-  email: "",
-  phone: "",
-  company: "",
-  country: "",
-  productRequirement: defaultProductRequirement,
-  message: "",
-  website: ""
-};
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    country: "",
+    productRequirement: defaultProductRequirement,
+    message: "",
+    website: ""
+  };
 }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -93,8 +94,19 @@ export default function B2BInquiryForm({ defaultProductRequirement = "" }) {
       setErrors({});
       setStatus({
         type: "success",
-        message: result.message || "Thank you. Your inquiry has been submitted successfully."
+        message: result.message || "Thank you. Redirecting to the confirmation page..."
       });
+
+      window.dataLayer?.push({
+        event: "generate_lead",
+        form_location: window.location.pathname,
+        product_requirement: values.productRequirement || "General inquiry"
+      });
+
+      window.setTimeout(() => {
+        const locale = getLocaleFromPathname(window.location.pathname) || DEFAULT_LOCALE;
+        window.location.assign(`${localizedPath(locale, "/thank-you")}?source=inquiry`);
+      }, 650);
     } catch (error) {
       setStatus({
         type: "error",

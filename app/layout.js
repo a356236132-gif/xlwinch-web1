@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 import { LanguageProvider } from "./components/LanguageProvider";
 import { headers } from "next/headers";
@@ -10,6 +11,9 @@ import {
   stripLocaleFromPathname
 } from "./lib/i18n-config";
 import { SITE_URL } from "./lib/site-config";
+
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "";
+const googleTagManagerId = process.env.NEXT_PUBLIC_GTM_ID || "";
 
 const baseMetadata = {
   metadataBase: new URL(SITE_URL),
@@ -47,7 +51,14 @@ const baseMetadata = {
   robots: {
     index: true,
     follow: true
-  }
+  },
+  ...(googleSiteVerification
+    ? {
+        verification: {
+          google: googleSiteVerification
+        }
+      }
+    : {})
 };
 
 export async function generateMetadata() {
@@ -74,6 +85,32 @@ export default async function RootLayout({ children }) {
   return (
     <html lang={locale}>
       <body>
+        {googleTagManagerId && (
+          <>
+            <Script
+              id="google-tag-manager"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','${googleTagManagerId}');
+                `
+              }}
+            />
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${googleTagManagerId}`}
+                height="0"
+                width="0"
+                style={{ display: "none", visibility: "hidden" }}
+                title="Google Tag Manager"
+              />
+            </noscript>
+          </>
+        )}
         <LanguageProvider initialLocale={locale}>
           {children}
           <WhatsAppFloatingButton />
