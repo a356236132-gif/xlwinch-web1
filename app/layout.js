@@ -49,6 +49,11 @@ const baseMetadata = {
     locale: "en_US",
     type: "website"
   },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png"
+  },
   robots: {
     index: true,
     follow: true
