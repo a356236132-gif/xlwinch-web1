@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import AnalyticsEvents from "./AnalyticsEvents";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "./LanguageProvider";
 
@@ -202,9 +203,18 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className="site-header" ref={headerRef}>
+    <>
+      <AnalyticsEvents />
+      <header className="site-header" ref={headerRef}>
       <a className="brand" href={href("/")} aria-label="XLIGHTING home">
-        <Image src="/assets/logo-header-v2.png" alt="XLIGHTING" width={146} height={40} priority />
+        <Image
+          src="/assets/logo-header-v2.png"
+          alt="XLIGHTING"
+          width={146}
+          height={40}
+          priority
+          style={{ width: "auto", height: "40px" }}
+        />
       </a>
 
       <nav className="desktop-nav mega-nav" aria-label="Primary navigation">
@@ -257,7 +267,14 @@ export default function SiteHeader() {
 
       <div className="header-actions-group">
         <LanguageSwitcher />
-        <a className="header-cta" href={href("/inquiry")}>
+        <a
+          className="header-cta"
+          href={href("/inquiry")}
+          data-track-event="quote_click"
+          data-track-category="lead_generation"
+          data-track-label="Header Get a Quote"
+          data-track-location="header"
+        >
           {header.getQuote}
           <ArrowRight size={16} aria-hidden="true" />
         </a>
@@ -288,6 +305,7 @@ export default function SiteHeader() {
         <a href={href("/projects")} onClick={closeMenu}>{header.projects}</a>
         <a href={href("/contact")} onClick={closeMenu}>{header.contact}</a>
       </div>
-    </header>
+      </header>
+    </>
   );
 }

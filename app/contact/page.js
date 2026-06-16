@@ -81,6 +81,10 @@ export default async function ContactPage() {
               href="https://wa.me/8615975490982?text=Hello%2C%20I%20would%20like%20to%20visit%20your%20factory%20or%20learn%20more%20about%20your%20stage%20lighting%20products."
               rel="noopener noreferrer"
               target="_blank"
+              data-track-event="whatsapp_click"
+              data-track-category="lead_generation"
+              data-track-label="Contact location WhatsApp"
+              data-track-location="contact_location"
             >
               <MessageCircle size={18} aria-hidden="true" />
               {page.location.whatsapp}

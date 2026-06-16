@@ -164,11 +164,25 @@ export default function Xk16cProductPage() {
             </div>
 
             <div className="product-actions">
-              <a className="button button-primary" href="#product-inquiry">
+              <a
+                className="button button-primary"
+                href="#product-inquiry"
+                data-track-event="quote_click"
+                data-track-category="lead_generation"
+                data-track-label="X-K16C PRO inquiry"
+                data-track-location="xk16c_hero"
+              >
                 Send Inquiry
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
-              <a className="button button-secondary" href="/assets/xlighting-xlwinch-catalog.pdf">
+              <a
+                className="button button-secondary"
+                href="/assets/xlighting-xlwinch-catalog.pdf"
+                data-track-event="catalog_download"
+                data-track-category="lead_generation"
+                data-track-label="X-K16C PRO catalog"
+                data-track-location="xk16c_hero"
+              >
                 <Download size={18} aria-hidden="true" />
                 Download Catalog
               </a>

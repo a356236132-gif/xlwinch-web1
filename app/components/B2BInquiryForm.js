@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AlertCircle, CheckCircle2, LoaderCircle, Send, ShieldCheck } from "lucide-react";
 import { DEFAULT_LOCALE, getLocaleFromPathname, localizedPath } from "../lib/i18n-config";
+import { trackEvent } from "./AnalyticsEvents";
 
 function createInitialValues(defaultProductRequirement = "") {
   return {
@@ -97,8 +98,9 @@ export default function B2BInquiryForm({ defaultProductRequirement = "" }) {
         message: result.message || "Thank you. Redirecting to the confirmation page..."
       });
 
-      window.dataLayer?.push({
-        event: "generate_lead",
+      trackEvent("generate_lead", {
+        event_category: "lead_generation",
+        event_label: values.productRequirement || "General inquiry",
         form_location: window.location.pathname,
         product_requirement: values.productRequirement || "General inquiry"
       });

@@ -223,11 +223,25 @@ export default async function GenericProductPage({ params }) {
             </div>
 
             <div className="product-actions">
-              <a className="button button-primary" href="#product-inquiry">
+              <a
+                className="button button-primary"
+                href="#product-inquiry"
+                data-track-event="quote_click"
+                data-track-category="lead_generation"
+                data-track-label={`${product.title} inquiry`}
+                data-track-location="product_hero"
+              >
                 Send Inquiry
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
-              <a className="button button-secondary" href="/assets/xlighting-xlwinch-catalog.pdf">
+              <a
+                className="button button-secondary"
+                href="/assets/xlighting-xlwinch-catalog.pdf"
+                data-track-event="catalog_download"
+                data-track-category="lead_generation"
+                data-track-label={`${product.title} catalog`}
+                data-track-location="product_hero"
+              >
                 <Download size={18} aria-hidden="true" />
                 Download Catalog
               </a>

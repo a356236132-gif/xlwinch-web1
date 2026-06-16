@@ -145,7 +145,14 @@ export default async function Home() {
               {home.hero.primary}
               <ChevronRight size={18} aria-hidden="true" />
             </a>
-            <a className="button button-secondary" href="/assets/xlighting-xlwinch-catalog.pdf">
+            <a
+              className="button button-secondary"
+              href="/assets/xlighting-xlwinch-catalog.pdf"
+              data-track-event="catalog_download"
+              data-track-category="lead_generation"
+              data-track-label="Homepage hero catalog"
+              data-track-location="homepage_hero"
+            >
               <Download size={18} aria-hidden="true" />
               {home.hero.secondary}
             </a>
@@ -197,7 +204,14 @@ export default async function Home() {
               </span>
             ))}
           </div>
-          <a className="text-link" href="#inquiry">
+          <a
+            className="text-link"
+            href="#inquiry"
+            data-track-event="quote_click"
+            data-track-category="lead_generation"
+            data-track-label="Featured product inquiry"
+            data-track-location="homepage_featured"
+          >
             {home.featured.link}
             <ArrowRight size={17} aria-hidden="true" />
           </a>

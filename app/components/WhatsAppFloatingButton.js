@@ -10,6 +10,10 @@ export default function WhatsAppFloatingButton() {
       rel="noopener noreferrer"
       target="_blank"
       title="Contact us on WhatsApp"
+      data-track-event="whatsapp_click"
+      data-track-category="lead_generation"
+      data-track-label="Floating WhatsApp"
+      data-track-location="floating_button"
     >
       <svg aria-hidden="true" viewBox="0 0 32 32">
         <path d="M16.03 4.05C9.44 4.05 4.08 9.38 4.08 15.93c0 2.1.55 4.14 1.6 5.95L4 28l6.28-1.63a12 12 0 0 0 5.75 1.46c6.59 0 11.95-5.33 11.95-11.9S22.62 4.05 16.03 4.05Zm0 21.76c-1.82 0-3.58-.49-5.13-1.42l-.37-.22-3.72.97.99-3.6-.24-.37a9.75 9.75 0 0 1-1.48-5.24c0-5.43 4.46-9.86 9.95-9.86 5.48 0 9.94 4.43 9.94 9.86s-4.46 9.88-9.94 9.88Z" />

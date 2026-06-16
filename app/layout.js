@@ -14,6 +14,7 @@ import { SITE_URL } from "./lib/site-config";
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "";
 const googleTagManagerId = process.env.NEXT_PUBLIC_GTM_ID || "";
+const googleAnalyticsMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
 
 const baseMetadata = {
   metadataBase: new URL(SITE_URL),
@@ -109,6 +110,26 @@ export default async function RootLayout({ children }) {
                 title="Google Tag Manager"
               />
             </noscript>
+          </>
+        )}
+        {googleAnalyticsMeasurementId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${googleAnalyticsMeasurementId}');
+                `
+              }}
+            />
           </>
         )}
         <LanguageProvider initialLocale={locale}>

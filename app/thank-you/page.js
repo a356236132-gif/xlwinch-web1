@@ -66,7 +66,14 @@ export default async function ThankYouPage() {
               Explore Products
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
-            <a className="button button-secondary" href="/assets/xlighting-xlwinch-catalog.pdf">
+            <a
+              className="button button-secondary"
+              href="/assets/xlighting-xlwinch-catalog.pdf"
+              data-track-event="catalog_download"
+              data-track-category="lead_generation"
+              data-track-label="Thank you page catalog"
+              data-track-location="thank_you_page"
+            >
               <Download size={18} aria-hidden="true" />
               Download Catalog
             </a>
@@ -89,7 +96,13 @@ export default async function ThankYouPage() {
           <p>Need a faster reply?</p>
           <h2>Contact Cherry Jiang directly.</h2>
           <div>
-            <a href="https://wa.me/8615975490982?text=Hello%2C%20I%20am%20interested%20in%20your%20products.%20Please%20send%20me%20more%20details.">
+            <a
+              href="https://wa.me/8615975490982?text=Hello%2C%20I%20am%20interested%20in%20your%20products.%20Please%20send%20me%20more%20details."
+              data-track-event="whatsapp_click"
+              data-track-category="lead_generation"
+              data-track-label="Thank you page WhatsApp"
+              data-track-location="thank_you_page"
+            >
               <MessageCircle size={18} aria-hidden="true" />
               WhatsApp
             </a>

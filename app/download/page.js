@@ -20,7 +20,14 @@ export default function DownloadPage() {
       <section className="download-card">
         <h2>2026 XLWINCH Catalog</h2>
         <p>Product overview for XLWINCH and kinetic lighting systems.</p>
-        <a className="button button-primary" href="/assets/xlighting-xlwinch-catalog.pdf">
+        <a
+          className="button button-primary"
+          href="/assets/xlighting-xlwinch-catalog.pdf"
+          data-track-event="catalog_download"
+          data-track-category="lead_generation"
+          data-track-label="Download page catalog"
+          data-track-location="download_page"
+        >
           <Download size={18} /> Download PDF
         </a>
       </section>
