@@ -9,22 +9,22 @@ import {
   TimerReset
 } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
-import { getRequestLocale } from "../lib/i18n-server";
+import { getLocalizedAlternates, getRequestLocale } from "../lib/i18n-server";
 import { localizedPath } from "../lib/i18n-config";
 import { CONTACT_EMAIL } from "../lib/site-config";
 
-export const metadata = {
-  title: "Thank You | Inquiry Submitted",
-  description:
-    "Thank you for contacting XLIGHTING. Our team has received your kinetic lighting inquiry and will follow up with product advice, quotation or catalog information.",
-  robots: {
-    index: false,
-    follow: false
-  },
-  alternates: {
-    canonical: "/thank-you"
-  }
-};
+export async function generateMetadata() {
+  return {
+    title: "Thank You | Inquiry Submitted",
+    description:
+      "Thank you for contacting XLIGHTING. Our team has received your kinetic lighting inquiry and will follow up with product advice, quotation or catalog information.",
+    robots: {
+      index: false,
+      follow: false
+    },
+    alternates: await getLocalizedAlternates("/thank-you")
+  };
+}
 
 const nextSteps = [
   {

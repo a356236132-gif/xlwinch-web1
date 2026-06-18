@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import ResourceArticlePage from "../../components/ResourceArticlePage";
 import { getArticle, resourceArticles } from "../../components/infoCenterData";
-import { getRequestLocale } from "../../lib/i18n-server";
+import { getLocalizedAlternates, getRequestLocale } from "../../lib/i18n-server";
 
 const section = "news";
 
@@ -20,9 +20,7 @@ export async function generateMetadata({ params }) {
   return {
     title: article.title,
     description: article.excerpt,
-    alternates: {
-      canonical: article.href
-    },
+    alternates: await getLocalizedAlternates(article.href),
     openGraph: {
       title: article.title,
       description: article.excerpt,

@@ -2,7 +2,7 @@ import SiteHeader from "../components/SiteHeader";
 import { ArticleGrid, CategoryCards, InfoHero } from "../components/InfoCenterSections";
 import { latestArticles } from "../components/infoCenterData";
 import { getDictionary } from "../lib/dictionaries";
-import { getRequestLocale } from "../lib/i18n-server";
+import { getLocalizedAlternates, getRequestLocale } from "../lib/i18n-server";
 
 export async function generateMetadata() {
   const locale = await getRequestLocale();
@@ -12,9 +12,7 @@ export async function generateMetadata() {
   return {
     title: `${info.hero.title} | ${info.hero.subtitle}`,
     description: info.hero.description,
-    alternates: {
-      canonical: "/info-center"
-    }
+    alternates: await getLocalizedAlternates("/info-center")
   };
 }
 

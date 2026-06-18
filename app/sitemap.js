@@ -1,6 +1,6 @@
 import { resourceArticles } from "./components/infoCenterData";
 import { productList } from "./lib/product-data";
-import { LOCALE_OPTIONS, localizedPath } from "./lib/i18n-config";
+import { DEFAULT_LOCALE, LOCALE_OPTIONS, localizedPath } from "./lib/i18n-config";
 import { SITE_URL } from "./lib/site-config";
 
 const staticRoutes = [
@@ -34,7 +34,7 @@ function languageAlternates(path) {
 
 function entry(path, priority = 0.7, changeFrequency = "monthly") {
   return {
-    url: absolutePath(path),
+    url: absolutePath(localizedPath(DEFAULT_LOCALE, path)),
     lastModified: new Date(),
     changeFrequency,
     priority,

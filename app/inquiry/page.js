@@ -1,15 +1,16 @@
 import { CheckCircle2, Clock3, Globe2, Mail, ShieldCheck } from "lucide-react";
 import B2BInquiryForm from "../components/B2BInquiryForm";
 import SiteHeader from "../components/SiteHeader";
+import { getLocalizedAlternates } from "../lib/i18n-server";
 
-export const metadata = {
-  title: "B2B Inquiry Form | Kinetic Lighting Quote",
-  description:
-    "Submit your B2B inquiry for XLIGHTING kinetic lighting systems, XL Winch systems, LED lifting balls, beam rings and OEM/ODM stage lighting projects.",
-  alternates: {
-    canonical: "/inquiry"
-  }
-};
+export async function generateMetadata() {
+  return {
+    title: "B2B Inquiry Form | Kinetic Lighting Quote",
+    description:
+      "Submit your B2B inquiry for XLIGHTING kinetic lighting systems, XL Winch systems, LED lifting balls, beam rings and OEM/ODM stage lighting projects.",
+    alternates: await getLocalizedAlternates("/inquiry")
+  };
+}
 
 const processItems = [
   ["1", "Submit project details", "Send product, country, quantity and timeline information."],

@@ -2,7 +2,7 @@ import SiteHeader from "../components/SiteHeader";
 import { FaqPageContent } from "../components/InfoCenterSections";
 import { faqItems } from "../components/infoCenterData";
 import { getDictionary } from "../lib/dictionaries";
-import { getRequestLocale } from "../lib/i18n-server";
+import { getLocalizedAlternates, getRequestLocale } from "../lib/i18n-server";
 
 export async function generateMetadata() {
   const locale = await getRequestLocale();
@@ -12,9 +12,7 @@ export async function generateMetadata() {
   return {
     title: `${heroTitle} | ${heroSubtitle}`,
     description: dictionary.infoCenter.faqDescription,
-    alternates: {
-      canonical: "/faq"
-    }
+    alternates: await getLocalizedAlternates("/faq")
   };
 }
 

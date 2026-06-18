@@ -17,6 +17,7 @@ import B2BInquiryForm from "../../components/B2BInquiryForm";
 import SiteHeader from "../../components/SiteHeader";
 import { getProductBySlug, productList } from "../../lib/product-data";
 import { absoluteUrl } from "../../lib/site-config";
+import { getLocalizedAlternates } from "../../lib/i18n-server";
 
 function buildBuyerSegments(product) {
   return [
@@ -108,9 +109,7 @@ export async function generateMetadata({ params }) {
       "OEM ODM stage lighting",
       "DMX kinetic lighting system"
     ],
-    alternates: {
-      canonical: product.href
-    },
+    alternates: await getLocalizedAlternates(product.href),
     openGraph: {
       title: product.title,
       description: product.summary,
