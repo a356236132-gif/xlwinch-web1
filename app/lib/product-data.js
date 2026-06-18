@@ -1,4 +1,6 @@
-export const productList = [
+import uploadedProducts from "../../content/products.json";
+
+const baseProducts = [
   {
     slug: "x-k16c-pro",
     href: "/products/x-k16c-pro",
@@ -132,6 +134,27 @@ export const productList = [
     ]
   }
 ];
+
+function normalizeProduct(product) {
+  const slug = product.slug;
+
+  return {
+    ...product,
+    href: product.href || `/products/${slug}`,
+    specs: Array.isArray(product.specs) ? product.specs : [],
+    features: Array.isArray(product.features) ? product.features : []
+  };
+}
+
+const productMap = new Map();
+
+for (const product of [...baseProducts, ...uploadedProducts].map(normalizeProduct)) {
+  if (product.slug && product.title) {
+    productMap.set(product.slug, product);
+  }
+}
+
+export const productList = Array.from(productMap.values());
 
 export function getProductBySlug(slug) {
   return productList.find((product) => product.slug === slug);
