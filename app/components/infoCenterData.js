@@ -1,3 +1,5 @@
+import { seoBlogArticles } from "./seoBlogArticles";
+
 export const infoCategories = [
   {
     title: "Blog",
@@ -28,6 +30,7 @@ export const infoCategories = [
 
 const rawResourceArticles = {
   blog: [
+    ...seoBlogArticles,
     {
       category: "Blog",
       title: "How Kinetic Lights Transform Event Experiences",
@@ -202,13 +205,13 @@ export const resourceArticles = Object.fromEntries(
   Object.entries(rawResourceArticles).map(([section, articles]) => [
     section,
     articles.map((article) => {
-      const slug = slugifyArticleTitle(article.title);
+      const slug = article.slug || slugifyArticleTitle(article.title);
 
       return {
         ...article,
         slug,
         href: `${sectionPaths[section]}/${slug}`,
-        body: buildArticleBody(article)
+        body: article.body || buildArticleBody(article)
       };
     })
   ])

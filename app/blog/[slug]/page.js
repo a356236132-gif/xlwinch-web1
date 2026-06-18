@@ -17,13 +17,16 @@ export async function generateMetadata({ params }) {
     return {};
   }
 
+  const title = article.seoTitle || article.title;
+  const description = article.metaDescription || article.excerpt;
+
   return {
-    title: article.title,
-    description: article.excerpt,
+    title,
+    description,
     alternates: await getLocalizedAlternates(article.href),
     openGraph: {
-      title: article.title,
-      description: article.excerpt,
+      title,
+      description,
       images: [{ url: article.image, alt: article.title }]
     }
   };
