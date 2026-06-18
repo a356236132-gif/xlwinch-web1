@@ -3340,11 +3340,22 @@ section {
   }
 
   .header-cta {
-    width: 44px;
+    width: 66px;
     min-height: 44px;
-    padding: 0;
+    padding: 0 10px;
     font-size: 0;
-    gap: 0;
+    gap: 5px;
+  }
+
+  .header-cta::before {
+    content: "Quote";
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .header-cta svg {
+    width: 13px;
+    height: 13px;
   }
 
   .header-actions-group {
@@ -3666,5 +3677,23 @@ section {
 
   .proof-grid {
     gap: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-cta {
+    width: 44px;
+    padding: 0;
+    font-size: 0;
+    gap: 0;
+  }
+
+  .header-cta::before {
+    content: none;
+  }
+
+  .header-cta svg {
+    width: 16px;
+    height: 16px;
   }
 }
