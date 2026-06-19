@@ -140,7 +140,7 @@ export default async function GenericProductPage({ params }) {
       {
         "@type": "Product",
         name: product.title,
-        image: absoluteUrl(product.image),
+        image: product.gallery.map((image) => absoluteUrl(image)),
         description: product.summary,
         brand: {
           "@type": "Brand",
@@ -199,6 +199,19 @@ export default async function GenericProductPage({ params }) {
                 priority
               />
             </div>
+            {product.gallery.length > 1 ? (
+              <div className="product-thumbs">
+                {product.gallery.map((image, index) => (
+                  <Image
+                    src={image}
+                    alt={`${product.title} product view ${index + 1}`}
+                    width={520}
+                    height={520}
+                    key={image}
+                  />
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <div className="product-summary">

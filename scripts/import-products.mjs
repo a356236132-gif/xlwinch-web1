@@ -114,6 +114,7 @@ const products = records
       title: product.title,
       eyebrow: product.eyebrow || "Professional Stage Lighting",
       image: product.image || "/assets/products/product-placeholder.jpg",
+      gallery: parseList(product.gallery),
       summary: product.summary || "",
       applications: product.applications || "",
       specs: parseSpecs(product.specs),

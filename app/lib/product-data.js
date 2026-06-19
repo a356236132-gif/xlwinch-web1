@@ -141,6 +141,7 @@ function normalizeProduct(product) {
   return {
     ...product,
     href: product.href || `/products/${slug}`,
+    gallery: Array.isArray(product.gallery) && product.gallery.length ? product.gallery : [product.image],
     specs: Array.isArray(product.specs) ? product.specs : [],
     features: Array.isArray(product.features) ? product.features : []
   };
