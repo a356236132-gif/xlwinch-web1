@@ -3556,6 +3556,13 @@ section {
     width: 100%;
   }
 
+  .product-summary h1,
+  .product-section-title h2,
+  .product-inquiry h2 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
   .product-grid,
   .application-list,
   .faq-list,
