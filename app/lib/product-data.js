@@ -155,7 +155,26 @@ for (const product of [...baseProducts, ...uploadedProducts].map(normalizeProduc
   }
 }
 
-export const productList = Array.from(productMap.values());
+const priorityProductSlugs = ["x-k66"];
+
+export const productList = Array.from(productMap.values()).sort((a, b) => {
+  const aPriority = priorityProductSlugs.indexOf(a.slug);
+  const bPriority = priorityProductSlugs.indexOf(b.slug);
+
+  if (aPriority === -1 && bPriority === -1) {
+    return 0;
+  }
+
+  if (aPriority === -1) {
+    return 1;
+  }
+
+  if (bPriority === -1) {
+    return -1;
+  }
+
+  return aPriority - bPriority;
+});
 
 export function getProductBySlug(slug) {
   return productList.find((product) => product.slug === slug);

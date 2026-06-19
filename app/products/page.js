@@ -19,12 +19,16 @@ export async function generateMetadata() {
 }
 
 const productIcons = [Lightbulb, Cable, Sparkles, Zap, Wand2, CircleDot];
+const translatedProductSlugs = ["x-k16c-pro", "xlwinch", "kinetic-ball", "kinetic-tube", "smart-series", "power-pro"];
 
 export default async function ProductsPage() {
   const locale = await getRequestLocale();
   const dictionary = getDictionary(locale);
   const page = dictionary.productsPage;
   const pageHref = (href) => localizedPath(locale, href);
+  const localizedProductCopy = new Map(
+    translatedProductSlugs.map((slug, index) => [slug, page.items[index]]).filter(([, item]) => item)
+  );
 
   return (
     <main>
@@ -38,7 +42,7 @@ export default async function ProductsPage() {
 
       <section className="listing-grid">
         {productList.map((product, index) => {
-          const content = page.items[index] || {
+          const content = localizedProductCopy.get(product.slug) || {
             title: product.title,
             text: product.summary
           };
