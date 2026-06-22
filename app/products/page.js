@@ -40,7 +40,7 @@ export default async function ProductsPage() {
         <span>{page.description}</span>
       </section>
 
-      <section className="listing-grid product-listing-grid">
+      <section className="listing-grid">
         {productList.map((product, index) => {
           const content = localizedProductCopy.get(product.slug) || {
             title: product.title,
@@ -48,7 +48,7 @@ export default async function ProductsPage() {
           };
           const Icon = productIcons[index] || Lightbulb;
           return (
-            <article className="listing-card product-listing-card" key={content.title}>
+            <article className="listing-card" key={content.title}>
               <Image src={product.image} alt={content.title} width={900} height={650} />
               <div>
                 <Icon size={24} aria-hidden="true" />

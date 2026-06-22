@@ -1625,7 +1625,6 @@ section {
 }
 
 .product-kicker,
-.product-summary .product-kicker,
 .product-section-title p,
 .product-inquiry > div > p:first-child {
   margin: 0 0 12px;
@@ -1640,9 +1639,9 @@ section {
 .product-inquiry h2 {
   margin: 0;
   color: var(--text);
-  font-size: 20px;
+  font-size: clamp(32px, 4.2vw, 58px);
   font-weight: 900;
-  line-height: 1.25;
+  line-height: 1.02;
 }
 
 .sales-contact-card h2 {
@@ -1866,30 +1865,6 @@ section {
   align-items: start;
   padding: 72px 0 90px;
   border-top: 1px solid var(--line);
-}
-
-.product-kicker,
-.product-summary .product-kicker,
-.product-section-title p,
-.product-inquiry > div > p:first-child,
-.product-summary h1,
-.product-section-title h2,
-.product-inquiry h2,
-.product-badges span,
-.quick-contact span,
-.spec-table strong,
-.advantage-grid h3,
-.product-faq-list h3,
-.product-support-grid h3,
-.product-buyer-grid h3,
-.product-buyer-grid span,
-.related-list a,
-.product-actions .button,
-.product-inquiry .inquiry-email-link,
-.product-inquiry .inquiry-form-grid label,
-.product-inquiry .inquiry-form-grid label strong,
-.product-inquiry .inquiry-form-footer .button {
-  font-size: 20px;
 }
 
 .thank-you-hero {
@@ -2132,11 +2107,6 @@ section {
   color: var(--accent-strong);
   font-size: 14px;
   font-weight: 900;
-}
-
-.product-listing-card h2,
-.product-listing-card a {
-  font-size: 20px;
 }
 
 .story-section,
@@ -3584,6 +3554,13 @@ section {
 
   .button {
     width: 100%;
+  }
+
+  .product-summary h1,
+  .product-section-title h2,
+  .product-inquiry h2 {
+    font-size: 16px;
+    line-height: 1.25;
   }
 
   .product-grid,
