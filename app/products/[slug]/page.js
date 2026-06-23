@@ -15,7 +15,7 @@ import {
 import { notFound } from "next/navigation";
 import B2BInquiryForm from "../../components/B2BInquiryForm";
 import SiteHeader from "../../components/SiteHeader";
-import { getProductBySlug, productList } from "../../lib/product-data";
+import { getProductBySlug, productList, xlwinchModelList } from "../../lib/product-data";
 import { absoluteUrl } from "../../lib/site-config";
 import { getLocalizedAlternates } from "../../lib/i18n-server";
 
@@ -272,6 +272,31 @@ export default async function GenericProductPage({ params }) {
           </div>
         </div>
       </section>
+
+      {product.slug === "xlwinch" ? (
+        <section className="product-detail-section xlwinch-model-section">
+          <div className="product-section-title">
+            <p>XLWINCH Models</p>
+            <h2>Choose a kinetic winch model for your load and lifting height.</h2>
+          </div>
+          <div className="xlwinch-model-grid">
+            {xlwinchModelList.map((model) => (
+              <article key={model.slug}>
+                <Image src={model.image} alt={`${model.title} kinetic winch`} width={900} height={650} />
+                <div>
+                  <span>{model.eyebrow}</span>
+                  <h3>{model.title}</h3>
+                  <p>{model.summary}</p>
+                  <Link href={model.href}>
+                    View model
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="product-detail-section">
         <div className="product-section-title">

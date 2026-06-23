@@ -25,7 +25,29 @@
       "products": {
         "introLabel": "Productos",
         "introText": "Líneas de iluminación cinética desde XLWINCH hasta luminarias de show.",
-        "introCta": "Ver todos los productos"
+        "introCta": "Ver todos los productos",
+        "links": [
+          [
+            "XLWINCH",
+            "Sistemas de winch DMX para elevar bolas, tubos, anillos y elementos escénicos personalizados.",
+            "/products/xlwinch"
+          ],
+          [
+            "Kinetic Ball",
+            "Movimiento vertical suave con coreografía luminosa programable para grandes arreglos visuales.",
+            "/products/kinetic-ball"
+          ],
+          [
+            "Kinetic Tube",
+            "Iluminación lineal cinética para clubs, escenarios, atrios e instalaciones inmersivas.",
+            "/products/kinetic-tube"
+          ],
+          [
+            "Beam Ring / X-K16C Pro",
+            "Beam ring volador con haces descendentes, LED RGBW e impacto escénico de 360 grados.",
+            "/products/x-k16c-pro"
+          ]
+        ]
       },
       "applications": {
         "introLabel": "Aplicaciones",
@@ -71,14 +93,6 @@
         {
           "name": "Beam Ring / X-K16C Pro",
           "text": "Beam ring volador con haces descendentes, LED RGBW e impacto escénico de 360 grados."
-        },
-        {
-          "name": "SMART",
-          "text": "Productos compactos listos para control y producción de eventos flexible."
-        },
-        {
-          "name": "Power Pro",
-          "text": "Iluminación escénica profesional para rental, touring e instalaciones permanentes."
         }
       ]
     },
@@ -106,10 +120,22 @@
       "titleLine2": "Preparado para proyectos B2B globales",
       "text": "Desde 2014, XLIGHTING ha crecido hasta convertirse en un equipo profesional de más de 30 personas para productos cinéticos, personalización y soporte de proyectos.",
       "stats": [
-        ["2014", "Fundada en Guangzhou"],
-        ["30+", "Miembros del equipo"],
-        ["OEM/ODM", "Fabricación personalizada"],
-        ["Global", "Soporte de proyectos"]
+        [
+          "2014",
+          "Fundada en Guangzhou"
+        ],
+        [
+          "30+",
+          "Miembros del equipo"
+        ],
+        [
+          "OEM/ODM",
+          "Fabricación personalizada"
+        ],
+        [
+          "Global",
+          "Soporte de proyectos"
+        ]
       ]
     },
     "faq": {
@@ -150,10 +176,6 @@
     "description": "Explora categorías XLIGHTING y solicita parámetros, precios o soporte OEM/ODM.",
     "items": [
       {
-        "title": "X-K16C PRO Beam Ring D90",
-        "text": "Sistema cinético Beam Ring con LED RGBW, elevación 0-8 m y control DMX512 / MADRIX."
-      },
-      {
         "title": "XLWINCH",
         "text": "Sistemas de winch cinético para bolas, tubos, anillos y luminarias escénicas personalizadas."
       },
@@ -166,8 +188,8 @@
         "text": "Fixtures lineales cinéticos para movimiento dinámico y diseño espacial de gran escala."
       },
       {
-        "title": "SMART Series",
-        "text": "Productos compactos de iluminación escénica listos para rental e instalación."
+        "title": "X-K16C PRO Beam Ring D90",
+        "text": "Sistema cinético Beam Ring con LED RGBW, elevación 0-8 m y control DMX512 / MADRIX."
       }
     ]
   },
@@ -183,12 +205,30 @@
       "eyebrow": "Categorías de aplicación",
       "title": "Construido para cada escenario, venue y entorno de producción.",
       "items": [
-        ["Conciertos & Tours", "Movimiento cinético de alto impacto para arenas, festivales y giras."],
-        ["Clubs & Bares", "Sistemas de movimiento en techo para escenarios DJ y nightlife."],
-        ["Bodas & Eventos", "Revelaciones cinéticas elegantes, arreglos de bolas y movimiento escénico."],
-        ["Iglesias", "Sistemas visuales fiables, silenciosos y programables para instalación fija."],
-        ["TV & Broadcast", "Cues cinéticos repetibles para estudios, streaming y producción audiovisual."],
-        ["Exhibiciones & Espacios comerciales", "Movimiento luminoso personalizado para showrooms, atrios y marcas."]
+        [
+          "Conciertos & Tours",
+          "Movimiento cinético de alto impacto para arenas, festivales y giras."
+        ],
+        [
+          "Clubs & Bares",
+          "Sistemas de movimiento en techo para escenarios DJ y nightlife."
+        ],
+        [
+          "Bodas & Eventos",
+          "Revelaciones cinéticas elegantes, arreglos de bolas y movimiento escénico."
+        ],
+        [
+          "Iglesias",
+          "Sistemas visuales fiables, silenciosos y programables para instalación fija."
+        ],
+        [
+          "TV & Broadcast",
+          "Cues cinéticos repetibles para estudios, streaming y producción audiovisual."
+        ],
+        [
+          "Exhibiciones & Espacios comerciales",
+          "Movimiento luminoso personalizado para showrooms, atrios y marcas."
+        ]
       ]
     },
     "buyers": {
@@ -197,12 +237,36 @@
       "typical": "Tamaño típico del proyecto",
       "recommended": "Productos recomendados",
       "items": [
-        ["Rental Companies", "50-500 fixtures", "K66 XL Winch, Kinetic Ball, Beam Ring"],
-        ["Integradores de sistemas", "Venues permanentes", "XL Winch Systems, Pixel Controller"],
-        ["Distribuidores", "Programas de stock regional", "Kinetic Ball, LED Bar, Beam Ring"],
-        ["Socios OEM", "Líneas de producto personalizadas", "Winch OEM, fixtures private-label"],
-        ["Productoras de eventos", "Tours y proyectos temporales", "Kinetic LED Bar, K01 Lifting Ball"],
-        ["Propietarios de venues", "Clubs, iglesias, teatros", "K66 Winch, Pixel Controller, Beam Ring"]
+        [
+          "Rental Companies",
+          "50-500 fixtures",
+          "K66 XL Winch, Kinetic Ball, Beam Ring"
+        ],
+        [
+          "Integradores de sistemas",
+          "Venues permanentes",
+          "XL Winch Systems, Pixel Controller"
+        ],
+        [
+          "Distribuidores",
+          "Programas de stock regional",
+          "Kinetic Ball, LED Bar, Beam Ring"
+        ],
+        [
+          "Socios OEM",
+          "Líneas de producto personalizadas",
+          "Winch OEM, fixtures private-label"
+        ],
+        [
+          "Productoras de eventos",
+          "Tours y proyectos temporales",
+          "Kinetic LED Bar, K01 Lifting Ball"
+        ],
+        [
+          "Propietarios de venues",
+          "Clubs, iglesias, teatros",
+          "K66 Winch, Pixel Controller, Beam Ring"
+        ]
       ]
     },
     "projects": {
@@ -217,10 +281,22 @@
       "eyebrow": "Fortaleza de fabricante",
       "title": "Confiado por profesionales en todo el mundo",
       "stats": [
-        ["20+", "Años de experiencia en la industria"],
-        ["100+", "Países atendidos"],
-        ["5000+", "Proyectos entregados"],
-        ["24 horas", "Soporte técnico"]
+        [
+          "20+",
+          "Años de experiencia en la industria"
+        ],
+        [
+          "100+",
+          "Países atendidos"
+        ],
+        [
+          "5000+",
+          "Proyectos entregados"
+        ],
+        [
+          "24 horas",
+          "Soporte técnico"
+        ]
       ]
     },
     "cta": {
@@ -232,10 +308,22 @@
     "title": "Equipo de iluminación escénica en Guangzhou para proyectos B2B globales.",
     "description": "Fundada en 2014, XLIGHTING apoya a rental companies, integradores y equipos de producción con productos cinéticos y soporte técnico.",
     "stats": [
-      ["2014", "Fundada en Guangzhou"],
-      ["30+", "Equipo profesional"],
-      ["OEM/ODM", "Sistemas personalizados"],
-      ["Global", "Entrega y soporte"]
+      [
+        "2014",
+        "Fundada en Guangzhou"
+      ],
+      [
+        "30+",
+        "Equipo profesional"
+      ],
+      [
+        "OEM/ODM",
+        "Sistemas personalizados"
+      ],
+      [
+        "Global",
+        "Entrega y soporte"
+      ]
     ]
   },
   "infoCenter": {
@@ -249,11 +337,26 @@
     "latestTitle": "Últimos artículos",
     "latestDescription": "Recursos recientes para compradores y equipos de proyecto.",
     "pages": {
-      "blog": ["Blog", "Ideas de industria e inspiración"],
-      "news": ["News", "Noticias de empresa y producto"],
-      "exhibitions": ["Exhibitions", "Ferias y eventos globales"],
-      "faq": ["FAQ", "Preguntas frecuentes"],
-      "knowledge": ["Knowledge Center", "Guías técnicas y recursos"]
+      "blog": [
+        "Blog",
+        "Ideas de industria e inspiración"
+      ],
+      "news": [
+        "News",
+        "Noticias de empresa y producto"
+      ],
+      "exhibitions": [
+        "Exhibitions",
+        "Ferias y eventos globales"
+      ],
+      "faq": [
+        "FAQ",
+        "Preguntas frecuentes"
+      ],
+      "knowledge": [
+        "Knowledge Center",
+        "Guías técnicas y recursos"
+      ]
     }
   },
   "contactPage": {

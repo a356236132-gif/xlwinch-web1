@@ -2,7 +2,6 @@ import Image from "next/image";
 import {
   ArrowRight,
   BadgeCheck,
-  Boxes,
   Cable,
   ChevronRight,
   Download,
@@ -14,7 +13,6 @@ import {
   ShieldCheck,
   Sparkles,
   TimerReset,
-  Wand2,
   Zap
 } from "lucide-react";
 import SiteHeader from "./components/SiteHeader";
@@ -24,14 +22,12 @@ import { localizedPath } from "./lib/i18n-config";
 import { getRequestLocale } from "./lib/i18n-server";
 import { CONTACT_EMAIL, SITE_URL, absoluteUrl } from "./lib/site-config";
 
-const productIcons = [Cable, Sparkles, Zap, Lightbulb, Wand2, Boxes];
+const productIcons = [Cable, Sparkles, Zap, Lightbulb];
 const homeProductHrefs = [
   "/products/xlwinch",
   "/products/kinetic-ball",
   "/products/kinetic-tube",
-  "/products/x-k16c-pro",
-  "/products/smart-series",
-  "/products/power-pro"
+  "/products/x-k16c-pro"
 ];
 
 function buildJsonLd(faqs) {
@@ -112,7 +108,7 @@ export default async function Home() {
   const home = dictionary.home;
   const common = dictionary.common;
   const pageHref = (href) => localizedPath(locale, href);
-  const products = home.products.items.map((product, index) => ({
+  const products = home.products.items.slice(0, 4).map((product, index) => ({
     ...product,
     href: homeProductHrefs[index] || "/products",
     icon: productIcons[index] || Cable

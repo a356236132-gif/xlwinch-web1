@@ -155,7 +155,8 @@ for (const product of [...baseProducts, ...uploadedProducts].map(normalizeProduc
   }
 }
 
-const priorityProductSlugs = ["x-k66", "x-k60", "x-k63"];
+export const xlwinchModelSlugs = ["x-k66", "x-k60", "x-k63"];
+const priorityProductSlugs = xlwinchModelSlugs;
 
 export const productList = Array.from(productMap.values()).sort((a, b) => {
   const aPriority = priorityProductSlugs.indexOf(a.slug);
@@ -175,6 +176,10 @@ export const productList = Array.from(productMap.values()).sort((a, b) => {
 
   return aPriority - bPriority;
 });
+
+export const xlwinchModelList = xlwinchModelSlugs
+  .map((slug) => productMap.get(slug))
+  .filter(Boolean);
 
 export function getProductBySlug(slug) {
   return productList.find((product) => product.slug === slug);

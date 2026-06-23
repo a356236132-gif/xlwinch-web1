@@ -27,14 +27,26 @@
         "introText": "Kinetic lighting product lines from XLWINCH to show fixtures.",
         "introCta": "View all products",
         "links": [
-          ["XLWINCH", "Kinetic winch systems for suspended fixtures.", "/products"],
-          ["SMART", "Compact control-ready lighting products.", "/products"],
-          ["Power Pro", "Professional stage lighting for rental and touring.", "/products"],
-          ["Pro Max", "High-output systems for large productions.", "/products"],
-          ["K66 XL Winch", "Main kinetic lifting system for global projects.", "/products"],
-          ["K01 LED Lifting Ball", "Suspended light balls for kinetic arrays.", "/products"],
-          ["K41A", "Professional kinetic lighting product line.", "/products"],
-          ["X-K16C PRO Beam Ring", "Flying beam ring D90 with DMX512 / MADRIX.", "/products/x-k16c-pro"]
+          [
+            "XLWINCH",
+            "DMX kinetic winch systems for lifting balls, tubes, rings and custom scenic fixtures.",
+            "/products/xlwinch"
+          ],
+          [
+            "Kinetic Ball",
+            "Smooth vertical motion with programmable light choreography for large visual arrays.",
+            "/products/kinetic-ball"
+          ],
+          [
+            "Kinetic Tube",
+            "Linear kinetic lighting for clubs, stages, atriums and immersive installations.",
+            "/products/kinetic-tube"
+          ],
+          [
+            "Beam Ring / X-K16C Pro",
+            "Flying beam ring effect with downward beams, RGBW LEDs and 360-degree stage impact.",
+            "/products/x-k16c-pro"
+          ]
         ]
       },
       "applications": {
@@ -42,12 +54,36 @@
         "introText": "Solutions for concerts, rental companies, venues and installations.",
         "introCta": "Explore applications",
         "links": [
-          ["Concerts & Tours", "Touring production and arena show effects.", "/applications"],
-          ["Clubs & Bars", "Immersive overhead venue installations.", "/applications"],
-          ["Weddings & Events", "Elegant kinetic moments for event production.", "/applications"],
-          ["Churches", "Reliable fixed installation lighting systems.", "/applications"],
-          ["TV & Broadcast", "Repeatable show cues for studio production.", "/applications"],
-          ["Exhibition & Commercial Spaces", "Brand, showroom and atrium installations.", "/applications"]
+          [
+            "Concerts & Tours",
+            "Touring production and arena show effects.",
+            "/applications"
+          ],
+          [
+            "Clubs & Bars",
+            "Immersive overhead venue installations.",
+            "/applications"
+          ],
+          [
+            "Weddings & Events",
+            "Elegant kinetic moments for event production.",
+            "/applications"
+          ],
+          [
+            "Churches",
+            "Reliable fixed installation lighting systems.",
+            "/applications"
+          ],
+          [
+            "TV & Broadcast",
+            "Repeatable show cues for studio production.",
+            "/applications"
+          ],
+          [
+            "Exhibition & Commercial Spaces",
+            "Brand, showroom and atrium installations.",
+            "/applications"
+          ]
         ]
       },
       "about": {
@@ -55,10 +91,26 @@
         "introText": "Guangzhou stage lighting manufacturer with OEM/ODM support.",
         "introCta": "Learn about XLIGHTING",
         "links": [
-          ["About", "XLIGHTING company profile and 30+ person team.", "/about"],
-          ["Factory", "Manufacturing, testing and delivery capability.", "/factory"],
-          ["OEM/ODM Support", "Custom kinetic lighting project cooperation.", "/contact"],
-          ["Global Project Support", "Support for rental, integrator and venue buyers.", "/projects"]
+          [
+            "About",
+            "XLIGHTING company profile and 30+ person team.",
+            "/about"
+          ],
+          [
+            "Factory",
+            "Manufacturing, testing and delivery capability.",
+            "/factory"
+          ],
+          [
+            "OEM/ODM Support",
+            "Custom kinetic lighting project cooperation.",
+            "/contact"
+          ],
+          [
+            "Global Project Support",
+            "Support for rental, integrator and venue buyers.",
+            "/projects"
+          ]
         ]
       },
       "info": {
@@ -66,11 +118,31 @@
         "introText": "Professional stage lighting resources for buyers and project teams.",
         "introCta": "Open info center",
         "links": [
-          ["Blog", "Industry insights and project inspiration.", "/blog"],
-          ["News", "Company updates and product announcements.", "/news"],
-          ["Exhibitions", "Trade shows and global lighting events.", "/exhibitions"],
-          ["FAQ", "Common procurement and technical questions.", "/faq"],
-          ["Knowledge", "Technical guides and learning resources.", "/knowledge"]
+          [
+            "Blog",
+            "Industry insights and project inspiration.",
+            "/blog"
+          ],
+          [
+            "News",
+            "Company updates and product announcements.",
+            "/news"
+          ],
+          [
+            "Exhibitions",
+            "Trade shows and global lighting events.",
+            "/exhibitions"
+          ],
+          [
+            "FAQ",
+            "Common procurement and technical questions.",
+            "/faq"
+          ],
+          [
+            "Knowledge",
+            "Technical guides and learning resources.",
+            "/knowledge"
+          ]
         ]
       }
     }
@@ -102,14 +174,6 @@
         {
           "name": "Beam Ring / X-K16C Pro",
           "text": "Flying beam ring effect with downward beams, RGBW LEDs and 360-degree stage impact."
-        },
-        {
-          "name": "SMART",
-          "text": "Compact kinetic and control-ready lighting products for flexible event production."
-        },
-        {
-          "name": "Power Pro",
-          "text": "Professional stage lighting products built for rental, touring and permanent installs."
         }
       ]
     },
@@ -145,10 +209,22 @@
       "titleLine2": "Built For Global B2B Projects",
       "text": "Since 2014, XLIGHTING has grown into a professional 30+ person stage lighting team, supporting rental companies, integrators and production teams with kinetic lighting products, customization and project support from China.",
       "stats": [
-        ["2014", "Founded in Guangzhou"],
-        ["30+", "Team Members"],
-        ["OEM/ODM", "Custom Manufacturing"],
-        ["Global", "Project Support"]
+        [
+          "2014",
+          "Founded in Guangzhou"
+        ],
+        [
+          "30+",
+          "Team Members"
+        ],
+        [
+          "OEM/ODM",
+          "Custom Manufacturing"
+        ],
+        [
+          "Global",
+          "Project Support"
+        ]
       ]
     },
     "faq": {
@@ -203,10 +279,6 @@
     "description": "Browse XLIGHTING product categories and request parameters, pricing or OEM/ODM support for your project.",
     "items": [
       {
-        "title": "X-K16C PRO Beam Ring D90",
-        "text": "Flying beam ring kinetic lighting system with RGBW LEDs, 0-8m lifting height and DMX512 / MADRIX control."
-      },
-      {
         "title": "XLWINCH",
         "text": "Kinetic winch systems for lifting balls, tubes, rings and custom scenic lighting fixtures."
       },
@@ -219,8 +291,8 @@
         "text": "Linear kinetic lighting fixtures for dynamic movement and large-scale spatial lighting design."
       },
       {
-        "title": "SMART Series",
-        "text": "Compact stage lighting and control-ready products for rental and installation buyers."
+        "title": "X-K16C PRO Beam Ring D90",
+        "text": "Flying beam ring kinetic lighting system with RGBW LEDs, 0-8m lifting height and DMX512 / MADRIX control."
       }
     ]
   },
@@ -236,12 +308,30 @@
       "eyebrow": "Application Categories",
       "title": "Built for every stage, venue and production environment.",
       "items": [
-        ["Concerts & Tours", "High-impact kinetic movement for arenas, festivals and touring shows."],
-        ["Clubs & Bars", "Immersive ceiling motion systems for DJ stages and nightlife venues."],
-        ["Weddings & Events", "Elegant kinetic reveals, ball arrays and scenic light movement for events."],
-        ["Churches", "Reliable, quiet and programmable visual systems for fixed installations."],
-        ["TV & Broadcast", "Repeatable kinetic cues for studios, livestream stages and film production."],
-        ["Exhibition & Commercial Spaces", "Custom motion lighting for showrooms, atriums and brand experiences."]
+        [
+          "Concerts & Tours",
+          "High-impact kinetic movement for arenas, festivals and touring shows."
+        ],
+        [
+          "Clubs & Bars",
+          "Immersive ceiling motion systems for DJ stages and nightlife venues."
+        ],
+        [
+          "Weddings & Events",
+          "Elegant kinetic reveals, ball arrays and scenic light movement for events."
+        ],
+        [
+          "Churches",
+          "Reliable, quiet and programmable visual systems for fixed installations."
+        ],
+        [
+          "TV & Broadcast",
+          "Repeatable kinetic cues for studios, livestream stages and film production."
+        ],
+        [
+          "Exhibition & Commercial Spaces",
+          "Custom motion lighting for showrooms, atriums and brand experiences."
+        ]
       ]
     },
     "buyers": {
@@ -250,12 +340,36 @@
       "typical": "Typical project size",
       "recommended": "Recommended products",
       "items": [
-        ["Rental Companies", "50-500 fixtures", "K66 XL Winch, Kinetic Ball, Beam Ring"],
-        ["System Integrators", "Permanent venues", "XL Winch Systems, Pixel Controller"],
-        ["Distributors", "Regional stock programs", "Kinetic Ball, LED Bar, Beam Ring"],
-        ["OEM Partners", "Custom product lines", "OEM winch systems, private-label fixtures"],
-        ["Event Production Companies", "Touring & seasonal projects", "Kinetic LED Bar, K01 Lifting Ball"],
-        ["Venue Owners", "Clubs, churches, theaters", "K66 Winch, Pixel Controller, Beam Ring"]
+        [
+          "Rental Companies",
+          "50-500 fixtures",
+          "K66 XL Winch, Kinetic Ball, Beam Ring"
+        ],
+        [
+          "System Integrators",
+          "Permanent venues",
+          "XL Winch Systems, Pixel Controller"
+        ],
+        [
+          "Distributors",
+          "Regional stock programs",
+          "Kinetic Ball, LED Bar, Beam Ring"
+        ],
+        [
+          "OEM Partners",
+          "Custom product lines",
+          "OEM winch systems, private-label fixtures"
+        ],
+        [
+          "Event Production Companies",
+          "Touring & seasonal projects",
+          "Kinetic LED Bar, K01 Lifting Ball"
+        ],
+        [
+          "Venue Owners",
+          "Clubs, churches, theaters",
+          "K66 Winch, Pixel Controller, Beam Ring"
+        ]
       ]
     },
     "projects": {
@@ -270,10 +384,22 @@
       "eyebrow": "Manufacturer Strength",
       "title": "Trusted By Professionals Worldwide",
       "stats": [
-        ["20+", "Years Industry Experience"],
-        ["100+", "Countries Served"],
-        ["5000+", "Projects Delivered"],
-        ["24-Hour", "Technical Support"]
+        [
+          "20+",
+          "Years Industry Experience"
+        ],
+        [
+          "100+",
+          "Countries Served"
+        ],
+        [
+          "5000+",
+          "Projects Delivered"
+        ],
+        [
+          "24-Hour",
+          "Technical Support"
+        ]
       ]
     },
     "cta": {
@@ -285,10 +411,22 @@
     "title": "Guangzhou stage lighting team built for global B2B projects.",
     "description": "Founded in 2014, XLIGHTING supports rental companies, integrators and production teams with kinetic lighting products and project support.",
     "stats": [
-      ["2014", "Founded in Guangzhou"],
-      ["30+", "Elite team members"],
-      ["OEM/ODM", "Custom kinetic systems"],
-      ["Global", "Delivery and project support"]
+      [
+        "2014",
+        "Founded in Guangzhou"
+      ],
+      [
+        "30+",
+        "Elite team members"
+      ],
+      [
+        "OEM/ODM",
+        "Custom kinetic systems"
+      ],
+      [
+        "Global",
+        "Delivery and project support"
+      ]
     ]
   },
   "infoCenter": {
@@ -305,18 +443,53 @@
     "faqTitle": "Procurement & Technical Questions",
     "faqDescription": "Quick answers for buyers planning stage lighting, kinetic lighting and OEM/ODM projects.",
     "pages": {
-      "blog": ["Blog", "Industry Insights & Project Inspiration"],
-      "news": ["News", "Company Updates & Product Announcements"],
-      "exhibitions": ["Exhibitions", "Trade Shows & Global Events"],
-      "faq": ["FAQ", "Frequently Asked Questions"],
-      "knowledge": ["Knowledge Center", "Technical Guides & Learning Resources"]
+      "blog": [
+        "Blog",
+        "Industry Insights & Project Inspiration"
+      ],
+      "news": [
+        "News",
+        "Company Updates & Product Announcements"
+      ],
+      "exhibitions": [
+        "Exhibitions",
+        "Trade Shows & Global Events"
+      ],
+      "faq": [
+        "FAQ",
+        "Frequently Asked Questions"
+      ],
+      "knowledge": [
+        "Knowledge Center",
+        "Technical Guides & Learning Resources"
+      ]
     },
     "categories": [
-      ["Blog", "Industry insights, buyer education and project inspiration for stage lighting teams.", "/blog"],
-      ["News", "Company updates, product announcements, factory news and project delivery notes.", "/news"],
-      ["Exhibitions", "Trade show updates, booth highlights, event recaps and global lighting industry moments.", "/exhibitions"],
-      ["FAQ", "Answers for MOQ, lead time, warranty, shipping, OEM service and technical support.", "/faq"],
-      ["Knowledge", "Technical guides for DMX512, Art-Net, MADRIX, installation and kinetic lighting basics.", "/knowledge"]
+      [
+        "Blog",
+        "Industry insights, buyer education and project inspiration for stage lighting teams.",
+        "/blog"
+      ],
+      [
+        "News",
+        "Company updates, product announcements, factory news and project delivery notes.",
+        "/news"
+      ],
+      [
+        "Exhibitions",
+        "Trade show updates, booth highlights, event recaps and global lighting industry moments.",
+        "/exhibitions"
+      ],
+      [
+        "FAQ",
+        "Answers for MOQ, lead time, warranty, shipping, OEM service and technical support.",
+        "/faq"
+      ],
+      [
+        "Knowledge",
+        "Technical guides for DMX512, Art-Net, MADRIX, installation and kinetic lighting basics.",
+        "/knowledge"
+      ]
     ]
   },
   "contactPage": {
