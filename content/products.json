@@ -146,5 +146,69 @@
       "DMX512 and MADRIX control support",
       "Compact aluminium alloy housing with black spray finish"
     ]
+  },
+  {
+    "slug": "x-k63",
+    "href": "/products/x-k63",
+    "title": "X Winch L4",
+    "eyebrow": "Mid Load Kinetic Winch System",
+    "image": "/assets/products/x-winch-l4-x-k63.jpg",
+    "gallery": [
+      "/assets/products/x-winch-l4-x-k63.jpg"
+    ],
+    "summary": "Professional X Winch L4 model X-K63 kinetic winch system with 0-12m lifting height, 15kg load capacity, 1000W power, aluminium alloy housing and DMX512 / MADRIX control support for stage kinetic lighting projects.",
+    "applications": "Concerts; touring productions; clubs; weddings; theaters; churches; TV studios; kinetic lighting installations",
+    "specs": [
+      [
+        "Model",
+        "X-K63"
+      ],
+      [
+        "Input Voltage",
+        "90-240V 50/60Hz"
+      ],
+      [
+        "Power",
+        "1000W"
+      ],
+      [
+        "Lifting Height",
+        "0-12m"
+      ],
+      [
+        "Load Weight",
+        "15kg"
+      ],
+      [
+        "Material",
+        "Aluminium alloy"
+      ],
+      [
+        "Finish",
+        "Black spray"
+      ],
+      [
+        "Control Mode",
+        "DMX512, MADRIX"
+      ],
+      [
+        "Working Temperature",
+        "-5-45 degrees C"
+      ],
+      [
+        "Size",
+        "L43 x W30 x H18.5cm"
+      ],
+      [
+        "N.W.",
+        "20.3kg"
+      ]
+    ],
+    "features": [
+      "0-12m lifting height for professional kinetic projects",
+      "15kg load capacity for suspended fixtures",
+      "DMX512 and MADRIX control support",
+      "1000W power with aluminium alloy housing"
+    ]
   }
 ]
