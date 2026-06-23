@@ -82,5 +82,69 @@
       "DMX512/RJ45 signal with RDM and MADRIX support",
       "750W servo motor with aluminium alloy housing"
     ]
+  },
+  {
+    "slug": "x-k60",
+    "href": "/products/x-k60",
+    "title": "X Winch L1",
+    "eyebrow": "Compact Kinetic Winch System",
+    "image": "/assets/products/x-winch-l1-x-k60.jpg",
+    "gallery": [
+      "/assets/products/x-winch-l1-x-k60.jpg"
+    ],
+    "summary": "Professional X Winch L1 model X-K60 compact kinetic winch system with 8m lifting height, 5kg load capacity, 260W power, aluminium alloy housing and DMX512 / MADRIX control support for stage kinetic lighting projects.",
+    "applications": "Concerts; clubs; weddings; theaters; churches; TV studios; compact kinetic installations",
+    "specs": [
+      [
+        "Model",
+        "X-K60"
+      ],
+      [
+        "Input Voltage",
+        "90-240V 50/60Hz"
+      ],
+      [
+        "Power",
+        "260W"
+      ],
+      [
+        "Lifting Height",
+        "8m"
+      ],
+      [
+        "Load Weight",
+        "5kg"
+      ],
+      [
+        "Material",
+        "Aluminium alloy"
+      ],
+      [
+        "Finish",
+        "Black spray"
+      ],
+      [
+        "Control Mode",
+        "DMX512, MADRIX"
+      ],
+      [
+        "Working Temperature",
+        "-5-45 degrees C"
+      ],
+      [
+        "Size",
+        "L29 x W18 x H39cm"
+      ],
+      [
+        "N.W.",
+        "10.1kg"
+      ]
+    ],
+    "features": [
+      "8m lifting height for compact kinetic lighting projects",
+      "5kg load capacity for lightweight suspended fixtures",
+      "DMX512 and MADRIX control support",
+      "Compact aluminium alloy housing with black spray finish"
+    ]
   }
 ]

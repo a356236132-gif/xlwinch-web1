@@ -155,7 +155,7 @@ for (const product of [...baseProducts, ...uploadedProducts].map(normalizeProduc
   }
 }
 
-const priorityProductSlugs = ["x-k66"];
+const priorityProductSlugs = ["x-k66", "x-k60"];
 
 export const productList = Array.from(productMap.values()).sort((a, b) => {
   const aPriority = priorityProductSlugs.indexOf(a.slug);
