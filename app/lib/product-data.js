@@ -1,10 +1,46 @@
 import uploadedProducts from "../../content/products.json";
 
+export const PRODUCT_CATEGORIES = [
+  {
+    slug: "x-winch",
+    label: "X WINCH",
+    description: "Kinetic winch systems for lifting balls, tubes, rings and suspended scenic fixtures."
+  },
+  {
+    slug: "pro-max",
+    label: "Pro Max",
+    description: "High-impact stage lighting products for large shows, touring and premium event projects."
+  },
+  {
+    slug: "power-pro",
+    label: "Power pro",
+    description: "Professional power and output-focused stage lighting products for rental and installation buyers."
+  },
+  {
+    slug: "sureload",
+    label: "Sureload",
+    description: "Load-focused stage lighting products and project solutions for reliable suspended installations."
+  },
+  {
+    slug: "smart",
+    label: "Smart",
+    description: "Compact and control-ready smart lighting products for flexible event and venue applications."
+  },
+  {
+    slug: "control-system",
+    label: "Control system",
+    description: "Control hardware and system support for DMX, MADRIX and kinetic lighting installations."
+  }
+];
+
+export const DEFAULT_PRODUCT_CATEGORY = "X WINCH";
+
 const baseProducts = [
   {
     slug: "x-k16c-pro",
     href: "/products/x-k16c-pro",
     title: "X-K16C PRO Beam Ring D90",
+    category: "Pro Max",
     eyebrow: "Flying Beam Ring System",
     image: "/assets/xk16c-product.jpg",
     summary:
@@ -27,6 +63,7 @@ const baseProducts = [
     slug: "xlwinch",
     href: "/products/xlwinch",
     title: "XLWINCH Kinetic Winch System",
+    category: "X WINCH",
     eyebrow: "Kinetic Lifting Core",
     image: "/assets/hero-xk16c.jpg",
     summary:
@@ -49,6 +86,7 @@ const baseProducts = [
     slug: "kinetic-ball",
     href: "/products/kinetic-ball",
     title: "Kinetic LED Lifting Ball",
+    category: "X WINCH",
     eyebrow: "Suspended Light Ball",
     image: "/assets/hero-concert-banner.jpg",
     summary:
@@ -71,6 +109,7 @@ const baseProducts = [
     slug: "kinetic-tube",
     href: "/products/kinetic-tube",
     title: "Kinetic LED Tube",
+    category: "X WINCH",
     eyebrow: "Linear Motion Lighting",
     image: "/assets/product-led-bsw-back.jpg",
     summary:
@@ -93,6 +132,7 @@ const baseProducts = [
     slug: "smart-series",
     href: "/products/smart-series",
     title: "SMART Series Stage Lighting",
+    category: "Smart",
     eyebrow: "Compact Stage Fixture Line",
     image: "/assets/product-led-bsw-front.jpg",
     summary:
@@ -115,6 +155,7 @@ const baseProducts = [
     slug: "power-pro",
     href: "/products/power-pro",
     title: "Power Pro Stage Lighting",
+    category: "Power pro",
     eyebrow: "High-Output Lighting System",
     image: "/assets/exhibition.jpg",
     summary:
@@ -141,6 +182,7 @@ function normalizeProduct(product) {
   return {
     ...product,
     href: product.href || `/products/${slug}`,
+    category: product.category || DEFAULT_PRODUCT_CATEGORY,
     gallery: Array.isArray(product.gallery) && product.gallery.length ? product.gallery : [product.image],
     specs: Array.isArray(product.specs) ? product.specs : [],
     features: Array.isArray(product.features) ? product.features : []
@@ -180,6 +222,28 @@ export const productList = Array.from(productMap.values()).sort((a, b) => {
 export const xlwinchModelList = xlwinchModelSlugs
   .map((slug) => productMap.get(slug))
   .filter(Boolean);
+
+export function getCategoryBySlug(slug) {
+  return PRODUCT_CATEGORIES.find((category) => category.slug === slug);
+}
+
+export function getCategoryByLabel(label) {
+  return PRODUCT_CATEGORIES.find((category) => category.label === label);
+}
+
+export function getProductsByCategory(categoryLabel) {
+  return productList.filter((product) => product.category === categoryLabel);
+}
+
+export function getProductsByCategorySlug(slug) {
+  const category = getCategoryBySlug(slug);
+
+  if (!category) {
+    return [];
+  }
+
+  return getProductsByCategory(category.label);
+}
 
 export function getProductBySlug(slug) {
   return productList.find((product) => product.slug === slug);

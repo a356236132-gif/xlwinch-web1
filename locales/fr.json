@@ -28,24 +28,34 @@
         "introCta": "Voir tous les produits",
         "links": [
           [
-            "XLWINCH",
-            "Systèmes de treuil DMX pour boules, tubes, anneaux et décors lumineux personnalisés.",
-            "/products/xlwinch"
+            "X WINCH",
+            "Kinetic winch systems for suspended lighting products.",
+            "/products/x-winch"
           ],
           [
-            "Kinetic Ball",
-            "Mouvement vertical fluide avec chorégraphie lumineuse programmable pour grands ensembles visuels.",
-            "/products/kinetic-ball"
+            "Pro Max",
+            "High-impact stage lighting for large productions.",
+            "/products/pro-max"
           ],
           [
-            "Kinetic Tube",
-            "Éclairage linéaire cinétique pour clubs, scènes, atriums et installations immersives.",
-            "/products/kinetic-tube"
+            "Power pro",
+            "Professional power and output-focused lighting products.",
+            "/products/power-pro"
           ],
           [
-            "Beam Ring / X-K16C Pro",
-            "Anneau Beam volant avec faisceaux descendants, LED RGBW et impact scénique à 360 degrés.",
-            "/products/x-k16c-pro"
+            "Sureload",
+            "Load-focused products for suspended installations.",
+            "/products/sureload"
+          ],
+          [
+            "Smart",
+            "Compact smart lighting products for flexible projects.",
+            "/products/smart"
+          ],
+          [
+            "Control system",
+            "DMX, MADRIX and kinetic lighting control support.",
+            "/products/control-system"
           ]
         ]
       },

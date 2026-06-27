@@ -112,6 +112,7 @@ const products = records
       slug,
       href: `/products/${slug}`,
       title: product.title,
+      category: product.category || "X WINCH",
       eyebrow: product.eyebrow || "Professional Stage Lighting",
       image: product.image || "/assets/products/product-placeholder.jpg",
       gallery: parseList(product.gallery),

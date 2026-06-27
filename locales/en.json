@@ -28,24 +28,34 @@
         "introCta": "View all products",
         "links": [
           [
-            "XLWINCH",
-            "DMX kinetic winch systems for lifting balls, tubes, rings and custom scenic fixtures.",
-            "/products/xlwinch"
+            "X WINCH",
+            "Kinetic winch systems for suspended lighting products.",
+            "/products/x-winch"
           ],
           [
-            "Kinetic Ball",
-            "Smooth vertical motion with programmable light choreography for large visual arrays.",
-            "/products/kinetic-ball"
+            "Pro Max",
+            "High-impact stage lighting for large productions.",
+            "/products/pro-max"
           ],
           [
-            "Kinetic Tube",
-            "Linear kinetic lighting for clubs, stages, atriums and immersive installations.",
-            "/products/kinetic-tube"
+            "Power pro",
+            "Professional power and output-focused lighting products.",
+            "/products/power-pro"
           ],
           [
-            "Beam Ring / X-K16C Pro",
-            "Flying beam ring effect with downward beams, RGBW LEDs and 360-degree stage impact.",
-            "/products/x-k16c-pro"
+            "Sureload",
+            "Load-focused products for suspended installations.",
+            "/products/sureload"
+          ],
+          [
+            "Smart",
+            "Compact smart lighting products for flexible projects.",
+            "/products/smart"
+          ],
+          [
+            "Control system",
+            "DMX, MADRIX and kinetic lighting control support.",
+            "/products/control-system"
           ]
         ]
       },

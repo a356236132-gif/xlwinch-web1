@@ -28,24 +28,34 @@
         "introCta": "Все продукты",
         "links": [
           [
-            "XLWINCH",
-            "DMX-лебёдки для подъёма шаров, труб, колец и индивидуальных сценических элементов.",
-            "/products/xlwinch"
+            "X WINCH",
+            "Kinetic winch systems for suspended lighting products.",
+            "/products/x-winch"
           ],
           [
-            "Kinetic Ball",
-            "Плавное вертикальное движение с программируемой световой хореографией для больших массивов.",
-            "/products/kinetic-ball"
+            "Pro Max",
+            "High-impact stage lighting for large productions.",
+            "/products/pro-max"
           ],
           [
-            "Kinetic Tube",
-            "Линейный кинетический свет для клубов, сцен, атриумов и иммерсивных инсталляций.",
-            "/products/kinetic-tube"
+            "Power pro",
+            "Professional power and output-focused lighting products.",
+            "/products/power-pro"
           ],
           [
-            "Beam Ring / X-K16C Pro",
-            "Летающий Beam Ring с нисходящими лучами, RGBW LED и сценическим эффектом 360 градусов.",
-            "/products/x-k16c-pro"
+            "Sureload",
+            "Load-focused products for suspended installations.",
+            "/products/sureload"
+          ],
+          [
+            "Smart",
+            "Compact smart lighting products for flexible projects.",
+            "/products/smart"
+          ],
+          [
+            "Control system",
+            "DMX, MADRIX and kinetic lighting control support.",
+            "/products/control-system"
           ]
         ]
       },

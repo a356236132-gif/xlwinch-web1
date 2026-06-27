@@ -15,9 +15,19 @@ import {
 import { notFound } from "next/navigation";
 import B2BInquiryForm from "../../components/B2BInquiryForm";
 import SiteHeader from "../../components/SiteHeader";
-import { getProductBySlug, productList, xlwinchModelList } from "../../lib/product-data";
+import {
+  getCategoryByLabel,
+  getCategoryBySlug,
+  getProductBySlug,
+  getProductsByCategorySlug,
+  PRODUCT_CATEGORIES,
+  xlwinchModelList
+} from "../../lib/product-data";
 import { absoluteUrl } from "../../lib/site-config";
-import { getLocalizedAlternates } from "../../lib/i18n-server";
+import { getLocalizedAlternates, getRequestLocale } from "../../lib/i18n-server";
+import { localizedPath } from "../../lib/i18n-config";
+
+export const dynamic = "force-dynamic";
 
 function buildBuyerSegments(product) {
   return [
@@ -84,14 +94,22 @@ function buildProductFaqs(product) {
   ];
 }
 
-export function generateStaticParams() {
-  return productList
-    .filter((product) => product.slug !== "x-k16c-pro")
-    .map((product) => ({ slug: product.slug }));
-}
-
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const category = getCategoryBySlug(slug);
+
+  if (category) {
+    return {
+      title: `${category.label} Products | XLIGHTING`,
+      description: category.description,
+      alternates: await getLocalizedAlternates(`/products/${category.slug}`),
+      openGraph: {
+        title: `${category.label} Products`,
+        description: category.description
+      }
+    };
+  }
+
   const product = getProductBySlug(slug);
 
   if (!product) {
@@ -123,14 +141,99 @@ export async function generateMetadata({ params }) {
   };
 }
 
+function buildCategoryJsonLd(category, products) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${category.label} Products`,
+    description: category.description,
+    itemListElement: products.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: absoluteUrl(product.href),
+      name: product.title
+    }))
+  };
+}
+
+function ProductCategoryPage({ category, pageHref, products }) {
+  const jsonLd = buildCategoryJsonLd(category, products);
+
+  return (
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SiteHeader />
+
+      <section className="inner-hero product-category-hero">
+        <p>Products / {category.label}</p>
+        <h1>{category.label} Products</h1>
+        <span>{category.description}</span>
+      </section>
+
+      <section className="product-category-tabs" aria-label="Product categories">
+        {PRODUCT_CATEGORIES.map((item) => (
+          <Link className={item.slug === category.slug ? "is-active" : ""} href={pageHref(`/products/${item.slug}`)} key={item.slug}>
+            {item.label}
+          </Link>
+        ))}
+      </section>
+
+      <section className="listing-grid category-product-grid">
+        {products.length ? (
+          products.map((product) => (
+            <article className="listing-card" key={product.slug}>
+              <Image src={product.image} alt={product.title} width={900} height={650} />
+              <div>
+                <span className="product-card-category">{product.category}</span>
+                <h2>{product.title}</h2>
+                <p>{product.summary}</p>
+                <Link href={pageHref(product.href)}>
+                  View details
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </div>
+            </article>
+          ))
+        ) : (
+          <div className="category-empty-card">
+            <h2>Products coming soon</h2>
+            <p>
+              This category is ready for future uploads. New products will appear here automatically when their category
+              field is set to {category.label}.
+            </p>
+          </div>
+        )}
+      </section>
+    </main>
+  );
+}
+
 export default async function GenericProductPage({ params }) {
   const { slug } = await params;
+  const locale = await getRequestLocale();
+  const pageHref = (href) => localizedPath(locale, href);
+  const category = getCategoryBySlug(slug);
+
+  if (category) {
+    return (
+      <ProductCategoryPage
+        category={category}
+        pageHref={pageHref}
+        products={getProductsByCategorySlug(category.slug)}
+      />
+    );
+  }
+
   const product = getProductBySlug(slug);
 
   if (!product || product.slug === "x-k16c-pro") {
     notFound();
   }
 
+  const productCategory = getCategoryByLabel(product.category);
   const buyerSegments = buildBuyerSegments(product);
   const supportItems = buildSupportItems(product);
   const productFaqs = buildProductFaqs(product);
@@ -150,7 +253,7 @@ export default async function GenericProductPage({ params }) {
           "@type": "Organization",
           name: "Guangzhou X Lighting Co., Ltd."
         },
-        category: "Professional Stage Lighting",
+        category: product.category,
         additionalProperty: product.specs.map(([name, value]) => ({
           "@type": "PropertyValue",
           name,
@@ -181,10 +284,16 @@ export default async function GenericProductPage({ params }) {
 
       <section className="product-hero generic-product-hero">
         <div className="breadcrumbs">
-          <Link href="/">Home</Link>
+          <Link href={pageHref("/")}>Home</Link>
           <span>/</span>
-          <Link href="/products">Products</Link>
+          <Link href={pageHref("/products")}>Products</Link>
           <span>/</span>
+          {productCategory ? (
+            <>
+              <Link href={pageHref(`/products/${productCategory.slug}`)}>{productCategory.label}</Link>
+              <span>/</span>
+            </>
+          ) : null}
           <span>{product.title}</span>
         </div>
 
@@ -216,6 +325,7 @@ export default async function GenericProductPage({ params }) {
 
           <div className="product-summary">
             <p className="product-kicker">{product.eyebrow}</p>
+            <span className="product-category-badge">{product.category}</span>
             <h1>{product.title}</h1>
             <p>{product.summary}</p>
 
@@ -287,7 +397,7 @@ export default async function GenericProductPage({ params }) {
                   <span>{model.eyebrow}</span>
                   <h3>{model.title}</h3>
                   <p>{model.summary}</p>
-                  <Link href={model.href}>
+                  <Link href={pageHref(model.href)}>
                     View model
                     <ArrowRight size={16} aria-hidden="true" />
                   </Link>
